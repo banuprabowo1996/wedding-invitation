@@ -513,6 +513,9 @@ footer li {
   .timeline li.timeline-inverted .timeline-panel::before {
     top: 40px;
   }
+  .mynavbar .offcanvas {
+    width: 40vh;
+  }
 }
 
 /* mobile phone small */
@@ -520,5 +523,8 @@ footer li {
   .timeline li .timeline-panel {
     width: 64%;
     transform: translateX(-10px);
+  }
+  .mynavbar .offcanvas {
+    width: 40vh;
   }
 }
