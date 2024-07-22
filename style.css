@@ -514,7 +514,8 @@ footer li {
     top: 40px;
   }
   .mynavbar .offcanvas {
-    width: 40vh;
+    width: 100vw;
+    min-width: 250px;
   }
 }
 
@@ -525,6 +526,7 @@ footer li {
     transform: translateX(-10px);
   }
   .mynavbar .offcanvas {
-    width: 40vh;
+    width: 100vw;
+    min-width: 250px;
   }
 }
