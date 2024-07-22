@@ -483,6 +483,9 @@ footer li {
   .comment .comment-list {
     width: 80%;
   }
+  .mynavbar .nav-link {
+    font-size: 1.2rem;
+  }
 }
 
 /* mobile phone */
@@ -516,6 +519,14 @@ footer li {
   .mynavbar .offcanvas {
     width: 100vw;
     min-width: 250px;
+  }
+  .navbar-expand-sm .navbar-nav {
+    flex-direction: row !important;
+    gap: 8px;
+    overflow: hidden;
+  }
+  .mynavbar .nav-link {
+    font-size: 1rem;
   }
 }
 
