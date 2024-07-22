@@ -438,11 +438,18 @@
     const hamburger = document.querySelector('.navbar-toggler')
     const stickyTop = document.querySelector('.sticky-top')
     const offcanvas = document.querySelector('.offcanvas')
+    const navLinks = document.querySelectorAll('.nav-link');
+    const btnClose = document.querySelector('.btn-close');
+
+    navLinks.forEach(function (navLink) {
+      navLink.addEventListener('click', function () {
+        btnClose.click();
+      });
+    });
 
     hamburger.addEventListener('click', function () {
       stickyTop.style.overflow = 'visible'
     })
-
 
     offcanvas.addEventListener('show.bs.offcanvas', function () {
       stickyTop.style.overflow = 'visible'
