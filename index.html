@@ -375,7 +375,7 @@
           <button class="btn btn-primary" id="submitButton" style="margin-top: 20px;">Submit Comment</button>
         </div>
 
-        <div class="col-md-8 col-10 comment-list py-5">
+        <div class="col-md-8 col-10 comment-list py-3">
           <ul id="commentList">
             <!-- Comments will be appended here -->
           </ul>
@@ -435,7 +435,14 @@
     })
   </script>
   <script>
+    const hamburger = document.querySelector('.navbar-toggler')
+    const stickyTop = document.querySelector('.sticky-top')
     const offcanvas = document.querySelector('.offcanvas')
+
+    hamburger.addEventListener('click', function () {
+      stickyTop.style.overflow = 'visible'
+    })
+
 
     offcanvas.addEventListener('show.bs.offcanvas', function () {
       stickyTop.style.overflow = 'visible'
