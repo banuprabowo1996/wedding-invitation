@@ -514,3 +514,11 @@ footer li {
     top: 40px;
   }
 }
+
+/* mobile phone small */
+@media (max-width: 472px) {
+  .timeline li .timeline-panel {
+    width: 64%;
+    transform: translateX(-10px);
+  }
+}
