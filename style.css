@@ -446,6 +446,7 @@ footer li {
     width: calc(100% - 200px);
     float: right;
   }
+
   .timeline li .timeline-panel::before {
     left: -15px;
     transform: rotate(-45deg);
@@ -501,8 +502,8 @@ footer li {
     height: 80px;
   }
   .timeline li .timeline-panel {
-    width: 60%;
-    /* transform: translateX(-10px); */
+    width: 70%;
+    transform: translateX(-10px);
   }
   .timeline li .timeline-panel::before {
     left: -15px;

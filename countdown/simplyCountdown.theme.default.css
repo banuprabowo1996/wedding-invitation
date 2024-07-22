@@ -43,7 +43,7 @@
 /* mobile phone */
 @media (max-width: 576px) {
   .simply-countdown > .simply-section {
-    padding: 40px;
+    padding: 45px;
     margin: 3px;
   }
 }
