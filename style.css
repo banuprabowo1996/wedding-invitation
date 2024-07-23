@@ -22,7 +22,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url(img/prewed_.jpg);
+  background-image: url(img/hero-img.jpg);
   background-size: cover;
   background-position: center;
   z-index: -1;
@@ -154,6 +154,7 @@ body {
   color: white;
   padding-top: 10rem;
   padding-bottom: 8rem;
+  margin-top: -20px;
 }
 
 .info .alamat {
@@ -317,10 +318,13 @@ body {
 }
 
 .rsvp p {
-  color: white;
+  color: var(--mineshaft);
 }
 .rsvp form label {
   color: white;
+  font-size: smaller;
+  color: var(--mineshaft);
+  margin-left: 2px;
 }
 
 .rsvp button,
