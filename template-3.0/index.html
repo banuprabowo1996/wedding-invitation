@@ -284,14 +284,14 @@
           <div class="mb-3">
             <label for="status" class="form-label">Konfirmasi</label>
             <select name="status" id="status" class="form-select">
-              <option selected>Pilih salah satu</option>
+              <option value="" disabled selected>Pilih salah satu</option>
               <option value="hadir">Hadir</option>
               <option value="tidak hadir">Tidak Hadir</option>
             </select>
           </div>
         </div>
         <div class="col-12">
-          <button class="btn btn-primary" style="margin-top: 20px;">Kirim</button>
+          <button id="kirim-btn" class="btn" style="margin-top: 20px;">Kirim</button>
         </div>
       </form>
   </section>
@@ -338,7 +338,7 @@
           <div class="mb-3">
             <textarea class="form-control" id="commentInput" rows="3" placeholder="Comment"></textarea>
           </div>
-          <button class="btn btn-primary" id="submitButton" style="margin-top: 20px;">Submit Comment</button>
+          <button class="btn" id="submitButton" style="margin-top: 20px;">Submit Comment</button>
         </div>
 
         <div class="col-md-8 col-10 comment-list py-3">
@@ -455,6 +455,20 @@
   </script>
 
   <script>
+    // handle konfirmasi kehadiran
+    const selectElement = document.getElementById('status');
+    const submitButton = document.getElementById('kirim-btn');
+
+    // Check if the select element has a valid selection before allowing the button click
+    submitButton.addEventListener('click', function (event) {
+      if (!selectElement.value) {
+        event.preventDefault(); // Prevent the button's default action
+        alert('Pilih konfirmasi Hadir / Tidak Hadir.');
+      }
+    });
+
+
+
     window.addEventListener("load", function () {
       const form = document.getElementById('my-form');
       form.addEventListener("submit", function (e) {
