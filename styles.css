@@ -45,7 +45,7 @@ body {
   background-color: #f2f2f2;
   border-radius: 50%;
   display: inline-block;
-  transform: translateX(-50%) translateY(-40%);
+  transform: translateX(-70%) translateY(-40%);
   z-index: -1;
 }
 
@@ -56,19 +56,31 @@ body {
   background-color: #f9f9f9;
   border-radius: 50%;
   display: inline-block;
-  transform: translateX(-38%) translateY(-30%);
+  transform: translateX(-64%) translateY(-40%);
   z-index: -1;
 }
 
 .bunga1 {
   position: absolute;
   right: 0;
+  top: 25%;
 }
 
 .bunga2 {
   position: absolute;
-  right: 30%;
-  top: 50%;
+  right: 20%;
+  top: 65%;
+}
+
+.decor .device {
+  transform: translateX(90%) translateY(25%);
+}
+
+.decor .socmed {
+  display: grid;
+  grid-column: 1;
+  gap: 10px;
+  transform: translateX(110%) translateY(-300%);
 }
 
 .hero ::before {
@@ -85,7 +97,7 @@ body {
 .hero {
   position: relative;
   color: #000000;
-  min-height: 100vh;
+  max-height: 100vh;
 }
 
 .hero main {
@@ -101,7 +113,8 @@ body {
 }
 
 .hero main p {
-  width: 40%;
+  width: 486px;
+  font-size: 1.5rem;
 }
 
 .hero main button {
