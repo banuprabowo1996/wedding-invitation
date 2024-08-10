@@ -220,6 +220,7 @@ body {
 .comment {
   padding-top: 10rem;
   padding-bottom: 8rem;
+  min-height: 100vh;
 }
 
 .story span,
@@ -336,6 +337,7 @@ body {
 .rsvp {
   background-color: #1f1f1f;
   color: #cccccc;
+  min-height: 100vh;
 }
 
 .rsvp h2 {
