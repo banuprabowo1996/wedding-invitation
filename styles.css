@@ -10,7 +10,7 @@ body {
   font-size: 1.2rem;
   font-family: "League Spartan", sans-serif;
   color: #000000;
-  /* min-height: 4000px; */
+  min-height: 4000px;
 }
 
 .navbar {
@@ -124,6 +124,73 @@ body {
   padding: 10px;
   border-radius: 10px;
   font-family: "Lexend Giga", sans-serif;
+}
+
+.template {
+  margin-top: 1rem;
+  padding-top: 2rem;
+}
+
+.template .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* image with text */
+.image-container {
+  position: relative;
+  display: inline-block; /* Adjusts to the size of the image */
+}
+
+.image-container img {
+  display: block; /* Ensures there are no gaps under the image */
+  width: 100%; /* Make the image responsive */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.image-container .overlay-text {
+  position: absolute;
+  top: 50%; /* Centers the text vertically */
+  right: 2%; /* Centers the text horizontally */
+  color: #ffffff; /* Change this to whatever color you need */
+  font-size: 2.3rem; /* Adjust the font size */
+  text-align: right; /* Center the text */
+  padding: 0.5rem; /* Optional: adds some padding around the text */
+  z-index: 1; /* Ensures the text appears above the image */
+  font-family: "Krona One", sans-serif;
+}
+
+.image-container .overlay-text-2 {
+  position: absolute;
+  top: 50%; /* Centers the text vertically */
+  left: 2%; /* Centers the text horizontally */
+  color: #ffffff; /* Change this to whatever color you need */
+  font-size: 2.3rem; /* Adjust the font size */
+  text-align: left; /* Center the text */
+  padding: 0.5rem; /* Optional: adds some padding around the text */
+  z-index: 1; /* Ensures the text appears above the image */
+  font-family: "Krona One", sans-serif;
+}
+
+.template img {
+  max-width: 100%; /* Ensure images are responsive */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.template .info {
+  margin-top: 8rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.template .variant {
+  margin-top: 8rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
 }
 
 @keyframes rotating {
