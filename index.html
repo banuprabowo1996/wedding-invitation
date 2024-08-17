@@ -46,7 +46,7 @@
     <div class="container-fluid mx-5 my-2">
       <a class="navbar-brand" href="#">Nikahanmu</a>
       <div class="navbar-nav">
-        <a class="nav-link" href="#hero">Home</a>
+        <a class="nav-link" href="#">Home</a>
         <a class="nav-link" href="#template">Template</a>
         <a class="nav-link" href="#harga">Harga</a>
         <a class="nav-link bg-grey px-5" href="#pesan">Pesan</a>
@@ -62,8 +62,8 @@
       <img class="bunga2" src="assets/img/bunga2-Photoroom 1.png" alt="">
       <img class="device" src="assets/img/Group 1.png" alt="">
       <div class="socmed">
-        <img src="assets/img/ig.png" alt="">
-        <img src="assets/img/wa.png" alt="">
+        <img src="assets/img/ig.png" alt="ig_icon" onclick="redirectToInstagram()">
+        <img src="assets/img/wa.png" alt="wa_icon" onclick="sendToWhatsapp()">
       </div>
     </div>
 
@@ -71,13 +71,11 @@
       <h2>Undangan Pernikahan Digital</h2>
       <h2>Kecanggihan dan Keanggunan dalam Satu Sentuhan</h2>
       <p>
-        Berikan sentuhan modern pada hari istimewa
-        anda dengan undangan pernikahan digital kami.
-        Mudah dibagikan, penuh warna, dan dirancang untuk
-        mencerminkan kepribadian anda. Mari buat undangan
-        yang membuat setiap tamu merasa spesial.
+        Berikan sentuhan modern pada hari istimewa anda dengan undangan pernikahan digital kami. Mudah dibagikan, penuh
+        warna, dan dirancang untuk mencerminkan kepribadian anda. Mari buat undangan yang membuat setiap tamu merasa
+        spesial.
       </p>
-      <button class="px-5">
+      <button class="" onclick="sendToWhatsapp()">
         Pesan Sekarang
       </button>
     </main>
@@ -97,17 +95,132 @@
       </div>
 
       <div class="variant">
-        <img src="assets/img/Group 2.png" alt="">
-        <img src="assets/img/Group 3.png" alt="">
-        <img src="assets/img/Group 3.png" alt="">
-        <img src="assets/img/Group 3.png" alt="">
-        <img src="assets/img/Group 3.png" alt="">
-        <img src="assets/img/Group 3.png" alt="">
-        <img src="assets/img/Group 3.png" alt="">
-        <img src="assets/img/Group 3.png" alt="">
+        <img class="item-template" src="assets/img/Group 2.png" alt="custom"
+          onclick="sendToWhatsapp('Paket Spesial Custom')">
+        <img class="item-template" src="assets/img/Group 3.png" alt="">
+        <img class="item-template" src="assets/img/Group 3.png" alt="">
+        <img class="item-template" src="assets/img/Group 3.png" alt="">
+        <img class="item-template" src="assets/img/Group 3.png" alt="">
+        <img class="item-template" src="assets/img/Group 3.png" alt="">
+        <img class="item-template" src="assets/img/Group 3.png" alt="">
+        <img class="item-template" src="assets/img/Group 3.png" alt="">
       </div>
     </div>
   </section>
+
+  <section id="harga"
+    class="harga w-100 h-100 p-3 mx-auto text-center d-flex justify-content-center align-items-center text-white">
+    <div class="decor">
+      <div class="circle-decoration-2"></div>
+      <div class="circle-decoration"></div>
+    </div>
+
+    <div class="text-black">
+      <h2 class="title-harga">Pilih Paket Undanganmu</h2>
+      <div class="card-container">
+
+        <div class="option" onclick="sendToWhatsapp('Paket Murah 1')">
+          <h4>Paket Murah 1</h4>
+          <p class="d-flex align-items-center">Rp<span>150.000</span></p>
+          <p class="bg-blue">PILIH SEKARANG</p>
+          <div class="card-content">
+            <div class="content">
+              <img src="assets/img/Icon.png" alt="Icon">
+              <p>Desain Sesuai Template</p>
+            </div>
+            <div class="content">
+              <img src="assets/img/Icon.png" alt="Icon">
+              <p>4 Halaman Undangan</p>
+            </div>
+            <div class="content">
+              <img src="assets/img/Icon.png" alt="Icon">
+              <p>300 Tamu Undangan</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="option-spesial" onclick="sendToWhatsapp('Paket Spesial Custom')">
+          <!-- terpopuler -->
+          <p class="terpopuler">TERPOPULER</p>
+          <!-- terpopuler -->
+
+          <h4>Paket<br>Spesial Custom</h4>
+          <p class="d-flex align-items-center">Rp<span>300.000</span></p>
+          <p class="bg-blue">PILIH SEKARANG</p>
+          <div class="card-content">
+            <div class="content">
+              <img src="assets/img/Icon.png" alt="Icon">
+              <p>Desain Sesuai Keinginan Anda</p>
+            </div>
+            <div class="content">
+              <img src="assets/img/Icon.png" alt="Icon">
+              <p>7 Halaman Undangan</p>
+            </div>
+            <div class="content">
+              <img src="assets/img/Icon.png" alt="Icon">
+              <p>Unlimited Tamu Undangan</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="option" onclick="sendToWhatsapp('Paket Murah 2')">
+          <h4>Paket Murah 2</h4>
+          <p class="d-flex align-items-center">Rp<span>200.000</span></p>
+          <p class="bg-blue">PILIH SEKARANG</p>
+          <div class="card-content">
+            <div class="content">
+              <img src="assets/img/Icon.png" alt="Icon">
+              <p>Desain Sesuai Template</p>
+            </div>
+            <div class="content">
+              <img src="assets/img/Icon.png" alt="Icon">
+              <p>5 Halaman Undangan</p>
+            </div>
+            <div class="content">
+              <img src="assets/img/Icon.png" alt="Icon">
+              <p>Unlimited Tamu Undangan</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col text-center">
+          <small class="block">&copy; 2024 Nikahanmu. All Rights Reserved.</small>
+          <!-- <small class="block">Design by <a href="https://instagram.com/banuprabowoo"
+                target="_blank">@banuprabowoo</a>.</small> -->
+          <ul class="mt-3">
+            <li><a href="https://instagram.com/nikahanmu.id" target="_blank"><i class="bi bi-instagram"></i></a></li>
+            <li><a href="https://www.facebook.com/banu.lamongan" target="_blank"><i class="bi bi-facebook"></i></a></li>
+            <li><a href="https://twitter.com/?lang=en" target="_blank"><i class="bi bi-twitter-x"></i></a></li>
+            <li><a href="https://youtube.com/?hl=id" target="_blank"><i class="bi bi-youtube"></i></a></li>
+            <li><a href="https://www.tiktok.com/" target="_blank"><i class="bi bi-tiktok"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function sendToWhatsapp(option) {
+      const phoneNumber = "628976982259"; // Use 62 for Indonesia's country code
+      const message = `Hallo, saya ingin pesan undangan online ${option ? option : ''}!`;
+
+      const whatsappUrl = "https://api.whatsapp.com/send?phone=" + phoneNumber + "&text=" + encodeURIComponent(message);
+
+      window.open(whatsappUrl, '_blank');
+    }
+
+    // ig
+    function redirectToInstagram() {
+      window.open("https://www.instagram.com/nikahanmu.id/", "_blank");
+    }
+  </script>
 </body>
 
 </html>
