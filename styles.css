@@ -17,10 +17,6 @@ body {
   background-color: white !important;
 }
 
-.mynavbar .nav-link {
-  /* text-transform: uppercase; */
-}
-
 .navbar-expand-sm .navbar-nav {
   flex-direction: row;
   gap: 5rem;
@@ -128,6 +124,9 @@ body {
   margin-left: 5rem;
 }
 
+.headline-small {
+  display: none;
+}
 .hero main h2 {
   font-size: 2.2rem;
 }
@@ -453,6 +452,22 @@ footer li {
   .mynavbar .nav-link {
     font-size: 1rem;
     text-align: center;
+  }
+  .hero {
+    position: relative;
+    overflow: hidden;
+  }
+  .bunga1 {
+    transform: translateY(10%);
+  }
+  .navbar .nav-link {
+    display: none;
+  }
+  .headline {
+    display: none;
+  }
+  .headline-small {
+    display: block;
   }
   .hero main {
     margin-left: 1rem;
