@@ -17,19 +17,20 @@ body {
   background-color: white !important;
 }
 
-.mynavbar .nav-link {
-  /* text-transform: uppercase; */
-}
-
-.navbar-expand-sm .navbar-nav {
-  flex-direction: row;
+.navbar-expand-md .navbar-nav {
   gap: 5rem;
-  overflow: hidden;
 }
 
-.navbar-brand {
+.navbar-brand,
+.offcanvas-title {
   font-family: "Leckerli One", cursive;
   font-size: 2rem;
+}
+
+.offcanvas,
+.offcanvas-md,
+.offcanvas-sm {
+  width: 200px !important;
 }
 
 .navbar-brand:hover,
@@ -47,11 +48,6 @@ body {
 .nav-link {
   font-family: "Lexend Giga", sans-serif;
   color: #000000;
-}
-
-.bg-grey {
-  background-color: var(--grey);
-  border-radius: 5px;
 }
 
 .circle-decoration {
@@ -128,6 +124,9 @@ body {
   margin-left: 5rem;
 }
 
+.headline-small {
+  display: none;
+}
 .hero main h2 {
   font-size: 2.2rem;
 }
@@ -303,6 +302,10 @@ body {
   font-weight: 300;
 }
 
+.option-spesial:hover .terpopuler {
+  background-color: #3498db;
+}
+
 .option h4,
 .option-spesial h4 {
   margin-bottom: 10px;
@@ -425,6 +428,15 @@ footer li {
 }
 
 /* tablet */
+@media (min-width: 768px) {
+  .navbar-nav .bg-grey {
+    background-color: var(--grey);
+    border-radius: 5px;
+    padding-left: 2.5rem !important;
+    padding-right: 2.5rem !important;
+  }
+}
+
 @media (max-width: 768px) {
   html {
     font-size: 65%;
@@ -432,6 +444,9 @@ footer li {
   .mynavbar .nav-link {
     font-size: 1.2rem;
     text-align: center;
+  }
+  .navbar-expand-md .navbar-nav {
+    gap: 0.5rem;
   }
   .image-container .overlay-text,
   .image-container .overlay-text-2 {
@@ -450,9 +465,25 @@ footer li {
   html {
     font-size: 60%;
   }
+  .offcanvas {
+    width: 50px;
+  }
   .mynavbar .nav-link {
     font-size: 1rem;
     text-align: center;
+  }
+  .hero {
+    position: relative;
+    overflow: hidden;
+  }
+  .bunga1 {
+    transform: translateY(10%);
+  }
+  .headline {
+    display: none;
+  }
+  .headline-small {
+    display: block;
   }
   .hero main {
     margin-left: 1rem;
@@ -505,9 +536,6 @@ footer li {
 @media (max-width: 472px) {
   .mynavbar .nav-link {
     font-size: 1rem;
-  }
-  .navbar-nav {
-    display: flex;
   }
   .hero main {
     text-align: left;
