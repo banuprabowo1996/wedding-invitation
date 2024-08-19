@@ -68,7 +68,9 @@ body {
   z-index: 9999; /* Ensure this is above the pseudo-element */
 }
 
-.hero a:hover {
+.hero a:hover,
+.rsvp button:hover,
+.comment button:hover {
   color: white;
   background-color: var(--shilo);
 }
@@ -356,15 +358,7 @@ body {
 
 .rsvp button,
 .comment button {
-  background-color: var(--shilo);
-  color: white;
-  border: 1px solid var(--shilo);
-}
-.rsvp button:hover,
-.comment button:hover {
   background-color: white;
-  color: var(--shilo);
-  border: 1px solid white;
 }
 
 .comment {
@@ -407,12 +401,12 @@ body {
 
 footer {
   padding: 3rem;
-  background-color: var(--shilo);
-  color: white;
+  background-color: #1f1f1f;
+  color: #666;
 }
 
 footer a {
-  color: var(--bg);
+  color: #666;
   font-weight: bold;
   text-decoration: none;
 }
