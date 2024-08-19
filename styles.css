@@ -99,6 +99,10 @@ body {
   cursor: pointer;
 }
 
+.decor .socmed img {
+  width: 2.5rem;
+}
+
 .hero ::before {
   content: "";
   position: absolute;
