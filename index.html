@@ -106,8 +106,9 @@
       <div class="variant">
         <img class="item-template" src="assets/img/Group 2.png" alt="custom"
           onclick="sendToWhatsapp('Paket Spesial Custom')">
-        <img class="item-template" src="assets/img/Group 3.png" alt="">
-        <img class="item-template" src="assets/img/Group 3.png" alt="">
+        <img class="item-template" src="assets/img/Group 3.png" alt="template-1" onclick="viewTemplate('1.0')">
+        <img class="item-template" src="assets/img/Group 3.png" alt="template-2" onclick="viewTemplate('2.0')">
+        <img class="item-template" src="assets/img/Group 3.png" alt="template-3" onclick="viewTemplate('3.0')">
         <!-- <img class="item-template" src="assets/img/Group 3.png" alt="">
         <img class="item-template" src="assets/img/Group 3.png" alt="">
         <img class="item-template" src="assets/img/Group 3.png" alt="">
@@ -231,6 +232,12 @@
     // ig
     function redirectToInstagram() {
       window.open("https://www.instagram.com/nikahanmu.id/", "_blank");
+    }
+
+    //template
+    function viewTemplate(params) {
+      const url = `template-${params}/?to=Tamu Nikahan`
+      window.open(url, '_blank')
     }
 
   </script>
