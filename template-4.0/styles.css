@@ -1,0 +1,147 @@
+body {
+  max-width: 600px;
+  margin: auto;
+}
+
+.header {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  background-color: #eeeeeb;
+  padding-left: 20px;
+}
+.header h2 {
+  font-weight: 200;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+.title h1 {
+  font-weight: 200;
+}
+
+.hero {
+  height: 400px;
+  font-size: larger;
+  color: white;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)),
+    url("img/dust-pixels-BiFWHcZLSdY-unsplash (1).jpg");
+  /* background-image: url("img/dust-pixels-BiFWHcZLSdY-unsplash\ \(1\).jpg"); */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 0.5; /* Tambahkan ini */
+}
+.text-hero-1,
+.text-hero-2 {
+  text-align: center;
+}
+
+.menu {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.menu .menu-story,
+.menu .menu-details,
+.menu .menu-rsvp {
+  height: 300px;
+  width: 300px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* ---- */
+  transition: all 1.5s ease-out;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+/* sebelum muncul ga keliatan dulu */
+.menu .hidden,
+.registry .hidden,
+.footer .hidden {
+  opacity: 0;
+  transform: translateY(30px);
+}
+/* efek muncul */
+/* Saat terlihat di layar */
+.menu .menu-story.show,
+.menu .menu-details.show,
+.menu .menu-rsvp.show {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.3s;
+}
+/* -------------------------- */
+.men .menu h2 {
+  font-weight: 100;
+  letter-spacing: 2px;
+}
+
+.menu .menu-story {
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)),
+    url("img/story-image.png");
+  background-position: center;
+}
+.menu .menu-details {
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)),
+    url("img/dessert.jpg");
+  background-position: center;
+}
+.menu .menu-rsvp {
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)),
+    url("img/flower-table.jpg");
+  background-position: center;
+}
+
+.registry {
+  padding: 40px;
+  height: 400px;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)),
+    url("img/dust-pixels-BiFWHcZLSdY-unsplash (1).jpg");
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.registry h2 {
+  font-weight: 200;
+}
+.registry p {
+  font-size: larger;
+}
+.registry button {
+  background-color: #7d7662;
+  padding: 20px;
+  border-radius: 50px;
+  color: white;
+  letter-spacing: 2px;
+  border: none;
+}
+
+.footer {
+  height: 250px;
+  background-color: #e1dbcd;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.footer .day-date {
+  font-size: larger;
+  line-height: 0.2; /* Coba antara 1.0 - 1.3 */
+}
