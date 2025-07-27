@@ -185,6 +185,14 @@
             alt="template-4"
             onclick="viewTemplate('4.0')"
           />
+
+          <img
+            class="item-template"
+            src="assets/img/Group 3.png"
+            alt="template-5"
+            onclick="viewTemplate('bagas')"
+          />
+
           <!-- <img class="item-template" src="assets/img/Group 3.png" alt="">
         <img class="item-template" src="assets/img/Group 3.png" alt="">
         <img class="item-template" src="assets/img/Group 3.png" alt="">
@@ -346,7 +354,10 @@
 
       //template
       function viewTemplate(params) {
-        const url = `template-${params}/?to=Tamu Nikahan`;
+        let url = `template-${params}/?to=Tamu Nikahan`;
+        if (params.includes("bagas")) {
+          url = `annisa-bagas/?to=Tamu Nikahan`;
+        }
         window.open(url, "_blank");
       }
     </script>
