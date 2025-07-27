@@ -88,11 +88,11 @@
           </div>
         </div>
 
-        <!-- <div class="footer">
+        <div class="footer">
           <p id="A">A</p>
           <p id="and">&</p>
           <p id="B">B</p>
-        </div> -->
+        </div>
       </div>
 
       <!-- page 1.2 promises -->
@@ -138,14 +138,14 @@
             <p>Ibu Sumiyati</p>
           </div>
 
-          <a href="https://www.instagram.com/banuprabowoo/" class="icon-ig">
+          <div class="icon-ig">
             <img src="img/instagram.png" alt="" />
-          </a>
+          </div>
         </div>
       </div>
       <!-- page 1.3 couples bagas -->
       <div class="section">
-        <a class="couples">
+        <div class="couples">
           <p class="and ephesis">&</p>
           <!-- <p class="ephesis custom-underline">Couples</p>
           <p class="text crimson-pro">
@@ -164,9 +164,9 @@
             <p>Ibu Sugihastiti</p>
           </div>
 
-          <a href="https://www.instagram.com/banuprabowoo/" class="icon-ig">
+          <div class="icon-ig">
             <img src="img/instagram.png" alt="" />
-          </a>
+          </div>
         </div>
       </div>
 
@@ -251,40 +251,28 @@
     </div>
 
     <script>
-      const urlParams = new URLSearchParams(window.location.search);
-      const nama = urlParams.get("to") || "Bapak/Ibu/Saudara/i";
-
-      const namaContainer = document.querySelector(
-        ".cover .bottom .crimsonText"
-      );
-      namaContainer.innerText = `${nama}`;
-
-      document.querySelector("#nama").value = nama;
-    </script>
-
-    <script>
       const rootElement = document.querySelector(":root");
       const audioIconWrapper = document.querySelector(".audio-icon-wrapper");
       const song = document.querySelector("#song");
       const audioIcon = document.querySelector(".audio-icon-wrapper i");
       // Ensure page scrolls to the top on load
-      // window.onload = function () {
-      //   window.scrollTo(0, 0);
-      //   disableScroll();
-      // };
+      window.onload = function () {
+        window.scrollTo(0, 0);
+        disableScroll();
+      };
 
-      // function disableScroll() {
-      //   const scrollTop =
-      //     window.pageYOffset || document.documentElement.scrollTop;
-      //   const scrollLeft =
-      //     window.pageXOffset || document.documentElement.scrollLeft;
+      function disableScroll() {
+        const scrollTop =
+          window.pageYOffset || document.documentElement.scrollTop;
+        const scrollLeft =
+          window.pageXOffset || document.documentElement.scrollLeft;
 
-      //   window.onscroll = function () {
-      //     window.scrollTo(scrollLeft, scrollTop);
-      //   };
+        window.onscroll = function () {
+          window.scrollTo(scrollLeft, scrollTop);
+        };
 
-      //   rootElement.style.scrollBehavior = "auto";
-      // }
+        rootElement.style.scrollBehavior = "auto";
+      }
 
       function playAudio(params) {
         song.volume = 0.1;
@@ -294,34 +282,11 @@
       }
 
       function enableScroll() {
-        // Enable scroll
-        document.body.classList.remove("no-scroll");
+        window.onscroll = function () {};
+        rootElement.style.scrollBehavior = "smooth";
 
-        // Tampilkan semua section lainnya
-        const sections = document.querySelectorAll(".section");
-        sections.forEach((section, index) => {
-          if (index !== 0) {
-            section.style.display = "block";
-          }
-        });
-
-        // Scroll ke section promises
-        const target = document.getElementById("promises");
-        target.scrollIntoView({ behavior: "smooth" });
         playAudio();
       }
-
-      // Saat halaman pertama kali dimuat, nonaktifkan scroll
-      window.addEventListener("DOMContentLoaded", () => {
-        document.body.classList.add("no-scroll");
-      });
-
-      // function enableScroll() {
-      //   window.onscroll = function () {};
-      //   rootElement.style.scrollBehavior = "smooth";
-
-      //   playAudio();
-      // }
 
       const targetTime = new Date(2025, 9, 6, 0, 0, 0).getTime(); // 10 Sept 2025
 

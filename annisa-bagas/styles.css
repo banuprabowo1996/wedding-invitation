@@ -460,6 +460,11 @@ hr.new5 {
   backdrop-filter: blur(10px);
   border-radius: 30px;
 }
+/* .the-days .ephesis {
+  margin-top: 40px;
+  font-size: 48px;
+  text-align: center;
+} */
 .the-days .ephesis {
   margin-top: 40px;
   font-size: 48px;
@@ -492,16 +497,4 @@ hr.new5 {
 .the-days .location .detail {
   margin-top: 17px;
   line-height: 1.2;
-}
-
-/* function biar landing page ke cover aja */
-body.no-scroll {
-  overflow: hidden;
-}
-
-.section:not(:first-child) {
-  display: none;
-}
-html {
-  scroll-behavior: smooth;
 }
