@@ -1,0 +1,500 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* ------------------------ end of reset css -------------- */
+
+/* ------------------------ font -------------- */
+.ephesis {
+  font-family: "Ephesis", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.crimson-text {
+  font-family: "Crimson Text", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.courgette {
+  font-family: "Courgette", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.crimson-pro {
+  font-family: "Crimson Pro", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+/* ------------------------ end of font -------------- */
+
+body {
+  background-color: #000; /* agar luar background hitam */
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
+.container {
+  width: 440px;
+  /* background-color: #fff; */
+}
+
+.section {
+  height: 953px; /* setinggi gambar */
+  background-image: url("img/bg-inv.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  position: relative;
+}
+
+.section-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  color: white;
+}
+
+.cover {
+  color: #feda97;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.cover .top .top-1 {
+  font-size: 32px;
+  line-height: 100%;
+  margin-top: 54px;
+}
+
+.cover .top .top-2 {
+  font-size: 64px;
+  line-height: 100%;
+  margin-top: -16px;
+}
+
+.cover .mid {
+  display: flex;
+  position: relative;
+  width: 440px;
+  margin-top: 159px;
+}
+
+.cover .mid #A {
+  font-size: 170px;
+  line-height: 100%;
+  color: white;
+  position: absolute;
+  left: 50px;
+  filter: blur(5px);
+}
+
+.cover .mid #and {
+  font-size: 64px;
+  line-height: 100%;
+  color: white;
+  position: absolute;
+  left: 190px;
+  top: 130px;
+  transform: rotate(6.4deg);
+  filter: blur(1px);
+}
+
+.cover .mid #B {
+  font-size: 170px;
+  line-height: 100%;
+  color: white;
+  position: absolute;
+  left: 240px;
+  top: 86px;
+  transform: rotate(6.4deg);
+  filter: blur(5px);
+}
+
+.cover .groom {
+  display: flex;
+  font-size: 75px;
+  z-index: 10;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.cover .groom {
+  position: relative;
+}
+
+.cover .groom .first {
+  position: absolute;
+  left: -150px;
+  top: 50px;
+}
+
+.cover .groom .second {
+  position: absolute;
+  top: 124px;
+  left: 20px;
+}
+
+.cover .bottom {
+  margin-top: 280px;
+  color: white;
+}
+
+.cover .bottom h4 {
+  font-size: 20px;
+}
+
+.cover .bottom h5 {
+  font-size: 24px;
+  margin-top: 8px;
+}
+
+.cover .bottom .btn-open {
+  margin-top: 18px;
+  padding: 7px 13px;
+  background-image: linear-gradient(to right, #f2b647, #ffe481);
+  border: 1px solid white;
+  color: white;
+}
+
+/* ------------------------------------ 1.2 start --------------------------------- */
+.promises,
+.couples,
+.the-days {
+  position: relative;
+  color: #feda97;
+  padding-top: 74px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.promises .ephesis,
+.couples .ephesis {
+  font-size: 48px;
+  text-align: center;
+  z-index: 1;
+}
+.promises .img-container {
+  margin-top: 44px;
+  z-index: 1;
+}
+.custom-underline {
+  border-bottom: 1px solid #feda97;
+}
+.promises .ar-rum {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.blur-background {
+  position: absolute;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3),
+    rgba(255, 255, 255, 0),
+    rgba(0, 0, 0, 1)
+  );
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(20px);
+  width: 360px;
+  height: 467px;
+  top: 436px;
+  border-radius: 20px;
+  z-index: 0;
+  padding-top: 97px;
+  padding-left: 37px;
+  padding-right: 37px;
+}
+.ar-rum .blur-background p,
+.couples .text {
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0%;
+}
+.ar-rum .blur-background h5 {
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+hr.new5 {
+  border: 1px solid white;
+  width: 155px;
+  margin: 30px 0;
+}
+
+/* ------------------------------------------- 1.3 couples start ----------------  */
+.couples {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.couples .text {
+  font-size: 16px;
+  line-height: 1.2;
+  letter-spacing: 0%;
+  margin-top: 41px;
+  padding: 0 60px;
+}
+.couples .img-container {
+  margin-top: 60px;
+}
+.couples .nick {
+  font-size: 40px;
+  margin-top: 57px;
+}
+.couples .full-name {
+  font-size: 24px;
+  margin-top: 7px;
+}
+.couples .text2 {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 10px;
+}
+.couples .icon-ig {
+  width: 30px;
+  height: 30px;
+  background-color: #f1b647;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  margin-top: 18px;
+}
+.couples .and {
+  font-size: 64px;
+  margin-top: 10px;
+}
+/* ------------------------------------------- 1.4 counting-days start ----------------  */
+.counting-days {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+  overflow: hidden;
+  width: 338px;
+  height: 317px;
+}
+.countdown-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding-top: 400px;
+}
+#countdown {
+  display: flex;
+  gap: 10px;
+}
+.time-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #feda97;
+}
+.number,
+.titik-dua {
+  font-size: 48px;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+  color: #feda97;
+}
+.label {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+/* ------------------------------------------- 1.5 the-days start ----------------  */
+.the-days {
+  text-align: center;
+}
+.the-days .container {
+  width: 350px;
+  height: 840px;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3),
+    rgba(255, 255, 255, 0),
+    rgba(0, 0, 0, 1)
+  );
+  backdrop-filter: blur(10px);
+  border-radius: 30px;
+}
+/* .the-days .ephesis {
+  margin-top: 40px;
+  font-size: 48px;
+  text-align: center;
+} */
+.the-days .ephesis {
+  margin-top: 40px;
+  font-size: 48px;
+  text-align: center;
+}
+
+.the-days .border-text {
+  display: inline-block;
+  border-bottom: 1px solid #feda97;
+  padding-bottom: 4px; /* opsional, buat spasi antara teks dan garis */
+}
+.the-days .akad {
+  font-size: 28px;
+  margin-top: 55px;
+}
+.the-days .date-text {
+  margin-top: 14px;
+  font-size: 16px;
+  line-height: 1.4;
+}
+.the-days .location {
+  margin-top: 18px;
+  font-size: 16px;
+  line-height: 1.2;
+  gap: 2px;
+}
+.the-days .location .label {
+  font-size: 24px;
+}
+.the-days .location .detail {
+  margin-top: 17px;
+  line-height: 1.2;
+}
