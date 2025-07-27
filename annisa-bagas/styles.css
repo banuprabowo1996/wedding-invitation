@@ -222,7 +222,7 @@ body {
   line-height: 100%;
   color: white;
   position: absolute;
-  left: 50px;
+  left: 40px;
   filter: blur(5px);
 }
 
@@ -242,7 +242,7 @@ body {
   line-height: 100%;
   color: white;
   position: absolute;
-  left: 240px;
+  left: 220px;
   top: 86px;
   transform: rotate(6.4deg);
   filter: blur(5px);
@@ -261,14 +261,14 @@ body {
 
 .cover .groom .first {
   position: absolute;
-  left: -150px;
+  left: -172px;
   top: 50px;
 }
 
 .cover .groom .second {
   position: absolute;
   top: 124px;
-  left: 20px;
+  left: 10px;
 }
 
 .cover .bottom {
