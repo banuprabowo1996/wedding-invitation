@@ -502,3 +502,28 @@ hr.new5 {
 .section-2 {
   display: none;
 }
+
+.footer {
+  position: absolute;
+  font-size: 32px;
+  display: flex;
+  color: #fff;
+  top: 88%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.footer.ephesis p.A,
+.footer.ephesis p.B {
+  text-shadow: 0 0 10px white, 0 0 20px white;
+  filter: blur(0.5px);
+}
+.footer .and {
+  font-size: 20px;
+  color: #feda97;
+  margin-top: 14px;
+  margin-left: -3px;
+}
+.footer.ephesis p.B {
+  margin-top: 19px;
+  margin-left: -8px;
+}
