@@ -498,3 +498,7 @@ hr.new5 {
   margin-top: 17px;
   line-height: 1.2;
 }
+
+.section-2 {
+  display: none;
+}

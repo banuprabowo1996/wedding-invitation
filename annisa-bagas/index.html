@@ -96,7 +96,7 @@
       </div>
 
       <!-- page 1.2 promises -->
-      <div class="section">
+      <div class="section section-2">
         <div class="promises" id="promises">
           <p class="ephesis custom-underline">Promises</p>
 
@@ -119,7 +119,7 @@
       </div>
 
       <!-- page 1.3 couples annisa -->
-      <div class="section">
+      <div class="section section-2">
         <div class="couples">
           <p class="ephesis custom-underline">Couples</p>
           <p class="text crimson-pro">
@@ -144,7 +144,7 @@
         </div>
       </div>
       <!-- page 1.3 couples bagas -->
-      <div class="section">
+      <div class="section section-2">
         <div class="couples">
           <p class="and ephesis">&</p>
           <!-- <p class="ephesis custom-underline">Couples</p>
@@ -171,7 +171,7 @@
       </div>
 
       <!-- page 1.4 video -->
-      <div class="section">
+      <div class="section section-2">
         <div class="counting-days">
           <div class="video-wrapper">
             <video width="338px" height="317px" controls>
@@ -211,7 +211,7 @@
           </div>
         </div>
       </div>
-      <div class="section">
+      <div class="section section-2">
         <div class="the-days">
           <div class="container">
             <!-- <p class="ephesis">The Days</p> -->
@@ -285,6 +285,10 @@
         window.onscroll = function () {};
         rootElement.style.scrollBehavior = "smooth";
 
+        const sections = document.querySelectorAll(".section-2");
+        sections.forEach((section) => {
+          section.style.display = "block"; // atau 'flex' jika perlu
+        });
         playAudio();
       }
 
