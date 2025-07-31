@@ -1,0 +1,99 @@
+document.addEventListener("DOMContentLoaded", () => {
+  // === Open invitation button ===
+  const openInvitationBtn = document.getElementById("openInvitation");
+
+  if (openInvitationBtn) {
+    openInvitationBtn.addEventListener("click", (e) => {
+      enableScroll();
+    });
+  }
+
+  // === Modal popup ===
+  const modal = document.getElementById("myModal");
+  const openBtn = document.getElementById("openModalBtn");
+  const closeBtn = document.querySelector(".close");
+
+  openBtn.onclick = function () {
+    modal.style.display = "block";
+  };
+
+  closeBtn.onclick = function () {
+    modal.style.display = "none";
+  };
+
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
+
+  // === Audio & Scroll ===
+  const rootElement = document.querySelector(":root");
+  const audioIconWrapper = document.querySelector(".audio-icon-wrapper");
+  const song = document.querySelector("#song");
+  const audioIcon = document.querySelector(".audio-icon-wrapper i");
+
+  function disableScroll() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const scrollLeft =
+      window.pageXOffset || document.documentElement.scrollLeft;
+
+    window.onscroll = function () {
+      window.scrollTo(scrollLeft, scrollTop);
+    };
+
+    rootElement.style.scrollBehavior = "auto";
+  }
+
+  function playAudio() {
+    song.volume = 0.1;
+    audioIconWrapper.style.display = "flex";
+    song.play();
+    isPlaying = true;
+  }
+
+  function enableScroll() {
+    window.onscroll = function () {};
+    rootElement.style.scrollBehavior = "smooth";
+
+    const sections = document.querySelectorAll(".section-2");
+    sections.forEach((section) => {
+      section.style.display = "block";
+    });
+
+    playAudio();
+  }
+
+  // === Countdown ===
+  const targetTime = new Date(2025, 9, 6, 0, 0, 0).getTime(); // 6 Okt 2025
+
+  function formatTime(value) {
+    return String(value).padStart(2, "0");
+  }
+
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const distance = targetTime - now;
+
+    if (distance <= 0) {
+      document.getElementById("countdown").innerHTML = "Waktu sudah lewat!";
+      clearInterval(interval);
+      return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor(
+      (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("days").textContent = formatTime(days);
+    document.getElementById("hours").textContent = formatTime(hours);
+    document.getElementById("minutes").textContent = formatTime(minutes);
+    document.getElementById("seconds").textContent = formatTime(seconds);
+  }
+
+  const interval = setInterval(updateCountdown, 1000);
+  updateCountdown();
+});
