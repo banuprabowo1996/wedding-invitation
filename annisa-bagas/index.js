@@ -1,4 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // === Open invitation button ===
+  const openInvitationBtn = document.getElementById("openInvitation");
+
+  if (openInvitationBtn) {
+    openInvitationBtn.addEventListener("click", (e) => {
+      enableScroll();
+    });
+  }
+
   // === Modal popup ===
   const modal = document.getElementById("myModal");
   const openBtn = document.getElementById("openModalBtn");

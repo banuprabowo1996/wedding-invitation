@@ -301,6 +301,7 @@ body {
   border: 1px solid white;
   color: white;
 }
+/* ------------------------------------ 1.1.1 first start --------------------------------- */
 
 /* ------------------------------------ 1.2 start --------------------------------- */
 .promises,
@@ -369,6 +370,20 @@ hr.new5 {
 }
 
 /* ------------------------------------------- 1.3 couples start ----------------  */
+.couples-container {
+  width: 360px;
+  height: 1833px;
+  padding-left: 15px;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3),
+    rgba(255, 255, 255, 0),
+    rgba(0, 0, 0, 1)
+  );
+  backdrop-filter: blur(10px);
+  border-radius: 30px;
+  box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.6);
+}
 .couples {
   display: flex;
   flex-direction: column;
@@ -381,9 +396,7 @@ hr.new5 {
   line-height: 1.2;
   letter-spacing: 0%;
   margin-top: 41px;
-  padding: 0 60px;
-}
-.couples .img-container {
+  padding: 0 20px;
 }
 .couples .nick {
   font-size: 40px;
@@ -410,7 +423,15 @@ hr.new5 {
 }
 .couples .and {
   font-size: 64px;
-  margin-top: 10px;
+  margin-top: 50px;
+}
+.couples-container .ellipse {
+  display: flex;
+  gap: 5px;
+}
+.couples-container .ellipse img {
+  width: 70px;
+  height: 70px;
 }
 /* ------------------------------------------- 1.4 counting-days start ----------------  */
 .counting-days-container {
@@ -425,7 +446,7 @@ hr.new5 {
   display: flex;
   align-self: center;
   justify-self: center;
-  padding-top: 317px;
+  padding-top: 300px;
 }
 .counting-days .video-wrapper video {
   width: 100%; /* Atau bisa kamu ganti dengan lebar spesifik */
@@ -465,7 +486,8 @@ hr.new5 {
 }
 /* ------------------------------------------- 1.5 the-days start ----------------  */
 .the-days,
-.gift {
+.gift,
+.couples-parent {
   text-align: center;
   position: relative;
   color: #feda97;
@@ -478,8 +500,7 @@ hr.new5 {
 .the-days .container,
 .our-moments .container,
 .gift .container-gift,
-.gift .container-whises,
-.couples-parent .container-couples {
+.gift .container-whises {
   width: 360px;
   height: 880px;
   padding-left: 15px;
@@ -596,7 +617,6 @@ hr.new5 {
   border: 2px solid #feda97;
   border-radius: 11px;
 }
-
 .gift .container-whises {
   height: 1436px;
   padding: 34px;
@@ -686,7 +706,7 @@ hr.new5 {
 /* ----------------------------- */
 
 .section-2 {
-  /* display: none; */
+  display: none;
 }
 .footer {
   position: absolute;
@@ -696,6 +716,9 @@ hr.new5 {
   top: 90%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+.couples-parent .footer {
+  top: 98%;
 }
 .footer.ephesis p.A,
 .footer.ephesis p.B {
