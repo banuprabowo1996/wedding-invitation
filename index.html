@@ -192,6 +192,12 @@
             alt="template-5"
             onclick="viewTemplate('bagas')"
           />
+          <img
+            class="item-template"
+            src="assets/img/Counting days.png"
+            alt="template-5"
+            onclick="viewTemplate('copy')"
+          />
 
           <!-- <img class="item-template" src="assets/img/Group 3.png" alt="">
         <img class="item-template" src="assets/img/Group 3.png" alt="">
@@ -357,6 +363,8 @@
         let url = `template-${params}/?to=Tamu Nikahan`;
         if (params.includes("bagas")) {
           url = `annisa-bagas/?to=Tamu Nikahan`;
+        } else if (params.includes("copy")) {
+          url = `annisa-bagas-copy/?to=Tamu Nikahan`;
         }
         window.open(url, "_blank");
       }

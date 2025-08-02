@@ -1,0 +1,805 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* ------------------------ end of reset css -------------- */
+
+/* ------------------------ font -------------- */
+.ephesis {
+  font-family: "Ephesis", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.crimson-text {
+  font-family: "Crimson Text", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.courgette {
+  font-family: "Courgette", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.crimson-pro {
+  font-family: "Crimson Pro", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+/* ------------------------ end of font -------------- */
+
+body {
+  background-color: #000; /* agar luar background hitam */
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
+.container {
+  width: 100vh;
+  height: 100vh;
+}
+
+.section {
+  height: 953px; /* setinggi gambar */
+  background-image: url("img/bg-inv.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  position: relative;
+}
+
+.section-continue {
+  height: 1906px; /* 953 * 2 */
+  background-image: url("img/bg-inv.jpeg");
+  background-repeat: repeat-y;
+  background-position: top center;
+  background-size: 440px 953px;
+  position: relative;
+}
+
+.section-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  color: white;
+}
+
+.cover {
+  color: #feda97;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.cover .top .top-1 {
+  font-size: 32px;
+  line-height: 100%;
+  margin-top: 54px;
+}
+
+.cover .top .top-2 {
+  font-size: 64px;
+  line-height: 100%;
+  margin-top: -16px;
+}
+
+.cover .mid {
+  display: flex;
+  position: relative;
+  width: 440px;
+  margin-top: 159px;
+}
+
+.cover .mid #A {
+  font-size: 170px;
+  line-height: 100%;
+  color: white;
+  position: absolute;
+  left: 40px;
+  filter: blur(5px);
+}
+
+.cover .mid #and {
+  font-size: 64px;
+  line-height: 100%;
+  color: white;
+  position: absolute;
+  left: 190px;
+  top: 130px;
+  transform: rotate(6.4deg);
+  filter: blur(1px);
+}
+
+.cover .mid #B {
+  font-size: 170px;
+  line-height: 100%;
+  color: white;
+  position: absolute;
+  left: 220px;
+  top: 86px;
+  transform: rotate(6.4deg);
+  filter: blur(5px);
+}
+
+.cover .groom {
+  display: flex;
+  font-size: 75px;
+  z-index: 10;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.cover .groom {
+  position: relative;
+}
+
+.cover .groom .first {
+  position: absolute;
+  left: -172px;
+  top: 50px;
+}
+
+.cover .groom .second {
+  position: absolute;
+  top: 124px;
+  left: 10px;
+}
+
+.cover .bottom {
+  margin-top: 280px;
+  color: white;
+}
+
+.cover .bottom h4 {
+  font-size: 20px;
+}
+
+.cover .bottom h5 {
+  font-size: 24px;
+  margin-top: 8px;
+}
+
+.cover .bottom .btn-open {
+  margin-top: 18px;
+  padding: 7px 13px;
+  background-image: linear-gradient(to right, #f2b647, #ffe481);
+  border: 1px solid white;
+  color: white;
+}
+/* ------------------------------------ 1.1.1 first start --------------------------------- */
+
+/* ------------------------------------ 1.2 start --------------------------------- */
+.promises,
+.couples {
+  position: relative;
+  color: #feda97;
+  padding-top: 74px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.promises .ephesis,
+.couples .ephesis {
+  font-size: 48px;
+  text-align: center;
+  z-index: 1;
+}
+.promises .img-container {
+  margin-top: 14px;
+  z-index: 1;
+}
+.custom-underline {
+  border-bottom: 1px solid #feda97;
+}
+.promises .ar-rum {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.blur-background {
+  position: absolute;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3),
+    rgba(255, 255, 255, 0),
+    rgba(0, 0, 0, 1)
+  );
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(20px);
+  width: 360px;
+  height: 467px;
+  top: 436px;
+  border-radius: 20px;
+  z-index: 0;
+  padding-top: 97px;
+  padding-left: 37px;
+  padding-right: 37px;
+  box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.6);
+}
+.ar-rum .blur-background p,
+.couples .text {
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0%;
+}
+.ar-rum .blur-background h5 {
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+hr.new5 {
+  border: 1px solid white;
+  width: 155px;
+  margin: 30px 0;
+}
+
+/* ------------------------------------------- 1.3 couples start ----------------  */
+.couples-container {
+  width: 360px;
+  height: 1833px;
+  padding-left: 15px;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3),
+    rgba(255, 255, 255, 0),
+    rgba(0, 0, 0, 1)
+  );
+  backdrop-filter: blur(10px);
+  border-radius: 30px;
+  box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.6);
+}
+.couples {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.couples .text {
+  font-size: 16px;
+  line-height: 1.2;
+  letter-spacing: 0%;
+  margin-top: 41px;
+  padding: 0 20px;
+}
+.couples .nick {
+  font-size: 40px;
+}
+.couples .full-name {
+  font-size: 24px;
+  margin-top: 7px;
+}
+.couples .text2 {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 10px;
+}
+.couples .icon-ig {
+  width: 30px;
+  height: 30px;
+  background-color: #f1b647;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  margin-top: 18px;
+}
+.couples .and {
+  font-size: 64px;
+  margin-top: 50px;
+}
+.couples-container .ellipse {
+  display: flex;
+  gap: 5px;
+}
+.couples-container .ellipse img {
+  width: 70px;
+  height: 70px;
+}
+/* ------------------------------------------- 1.4 counting-days start ----------------  */
+.counting-days-container {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.counting-days {
+  display: flex;
+  align-self: center;
+  justify-self: center;
+  padding-top: 300px;
+}
+.counting-days .video-wrapper video {
+  width: 100%; /* Atau bisa kamu ganti dengan lebar spesifik */
+  max-width: 338px; /* Menjaga agar tidak lebih besar dari desain */
+  height: auto; /* Menyesuaikan tinggi secara proporsional */
+  border: 3px solid #feda97; /* Atur warna dan ketebalan border */
+  border-radius: 20px; /* Membulatkan sudut */
+  box-sizing: border-box;
+  box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.6);
+}
+.countdown-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 31px;
+}
+#countdown {
+  display: flex;
+  gap: 10px;
+}
+.time-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #feda97;
+}
+.number,
+.titik-dua {
+  font-size: 48px;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+  color: #feda97;
+}
+.label {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+/* ------------------------------------------- 1.5 the-days start ----------------  */
+.the-days,
+.gift,
+.couples-parent {
+  text-align: center;
+  position: relative;
+  color: #feda97;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 40px;
+}
+
+.the-days .container,
+.our-moments .container,
+.gift .container-gift,
+.gift .container-whises {
+  width: 360px;
+  height: 880px;
+  padding-left: 15px;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3),
+    rgba(255, 255, 255, 0),
+    rgba(0, 0, 0, 1)
+  );
+  backdrop-filter: blur(10px);
+  border-radius: 30px;
+  box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.6);
+}
+.the-days .ephesis,
+.our-moments .ephesis {
+  margin-top: 20px;
+  font-size: 48px;
+  text-align: center;
+}
+.the-days .border-text,
+.our-moments .border-text,
+.gift .border-text {
+  display: inline-block;
+  border-bottom: 1px solid #feda97;
+  padding-bottom: 4px; /* opsional, buat spasi antara teks dan garis */
+}
+.the-days .akad {
+  font-size: 28px;
+  margin-top: 35px;
+}
+.the-days .date-text {
+  margin-top: 14px;
+  font-size: 16px;
+  line-height: 1.4;
+}
+.the-days .location {
+  margin-top: 18px;
+  font-size: 16px;
+  line-height: 1.2;
+  gap: 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.the-days .location .label {
+  font-size: 24px;
+}
+.the-days .location .detail {
+  margin-top: 17px;
+  line-height: 1.2;
+  padding: 0 80px;
+}
+.the-days .maps {
+  width: 148px;
+  margin-top: 24px;
+  padding: 7px 23px;
+  border: 2px solid #feda97;
+  border-radius: 11px;
+}
+/* ------------------------------------------- 1.6 our-moments start ----------------  */
+.our-moments {
+  padding-top: 40px;
+  color: #feda97;
+}
+.our-moments .container {
+  padding-top: 10px;
+}
+.our-moments .second {
+  display: flex;
+  gap: 14px;
+  margin-top: 10px;
+}
+.our-moments .third {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+.our-moments .fourth {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+.our-moments .fifth {
+  display: flex;
+  gap: 9px;
+  margin-top: 10px;
+}
+/* ------------------------------------------- 1.7 gift start ----------------  */
+.gift .container-gift {
+  height: 300px;
+  padding: 34px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.gift .ephesis {
+  font-size: 48px;
+  text-align: center;
+}
+.gift .crimson-pro {
+  margin-top: 41px;
+}
+.gift button {
+  margin-top: 19px;
+  width: 166px;
+  height: 40px;
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+  align-items: center;
+  font-size: 19px;
+  color: #fff;
+  background-color: #f2b648;
+  border: 2px solid #feda97;
+  border-radius: 11px;
+}
+.gift .container-whises {
+  height: 1436px;
+  padding: 34px;
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.gift .container-whises .A {
+  color: #fff;
+  font-size: 96px;
+  margin-top: 34px;
+}
+.gift .container-whises .and {
+  font-size: 48px;
+  margin-top: 96px;
+  margin-left: -12px;
+}
+.gift .container-whises .B {
+  color: #fff;
+  font-size: 96px;
+  margin-top: 96px;
+  margin-left: -16px;
+}
+.wishes-form {
+  margin-top: 22px;
+  text-align: left;
+  font-size: 16px;
+}
+.wishes-form textarea {
+  background-color: white;
+  border-radius: 5px;
+}
+.wishes-form textarea::placeholder {
+  color: gray;
+  padding: 4px 0 0 10px;
+}
+
+.container-message {
+  margin-top: 100px;
+}
+.container-message .message-buble {
+  width: 260px;
+  height: 131px;
+  background-color: #ac9f8c;
+  border-radius: 5px;
+  padding: 9px;
+  text-align: left;
+}
+.container-message .message-content {
+  color: black;
+  font-size: 14px;
+  margin-left: 2px;
+}
+.container-message .message-time {
+  color: black;
+  font-size: 12px;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+/* ------------------------------------------- 1.8 terima kasih ----------------  */
+.thanks {
+  color: #feda97;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.thanks img {
+  margin-top: 50px;
+}
+.thanks .text {
+  font-size: 16px;
+  padding: 0 20px;
+  text-align: center;
+}
+.thanks .words {
+  font-size: 28px;
+  margin-top: 30px;
+}
+.thanks .lovers {
+  font-size: 48px;
+  margin-top: 30px;
+}
+
+/* ----------------------------- */
+
+.section-2 {
+  display: none;
+}
+.footer {
+  position: absolute;
+  font-size: 32px;
+  display: flex;
+  color: #fff;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.couples-parent .footer {
+  top: 98%;
+}
+.footer.ephesis p.A,
+.footer.ephesis p.B {
+  text-shadow: 0 0 10px white, 0 0 20px white;
+  filter: blur(0.5px);
+}
+.footer .and {
+  font-size: 20px;
+  color: #feda97;
+  margin-top: 14px;
+  margin-left: -3px;
+}
+.footer.ephesis p.B {
+  margin-top: 19px;
+  margin-left: -8px;
+}
+
+/* ---------------- modal ---------------- */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 20px 20px 50px 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 400px;
+  position: relative;
+}
+.modal-content h2 {
+  margin-top: 50px;
+  text-align: center;
+  padding: 0 40px;
+  line-height: 1.2;
+}
+.modal .card {
+  margin-top: 22px;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.modal .modal-content .container {
+  position: relative;
+  background-color: #fef1d4;
+  width: 284px;
+  height: 137px;
+  padding: 15px;
+  text-align: center;
+}
+.modal .modal-content .container .bank {
+  border-bottom: 1px solid black;
+  padding-bottom: 10px;
+}
+.modal button {
+  margin-top: 20px;
+  background-color: #f1b647;
+  width: 100%;
+  padding: 4px 0;
+  color: white;
+  border-radius: 2px;
+  font-size: 14px;
+}
+.close {
+  color: #aaa;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.close:hover {
+  color: black;
+}
