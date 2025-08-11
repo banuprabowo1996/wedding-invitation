@@ -48,10 +48,6 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
@@ -62,14 +58,20 @@
       <div class="section">
         <div class="cover">
           <div
-            class="top ephesis animate__animated animate__fadeIn animate__delay-1s animate__slower"
+            class="top ephesis"
+            data-aos="fade-in"
+            data-aos-delay="400"
+            data-aos-duration="2000"
           >
             <p class="top-1">Its Our</p>
             <p class="top-2">Wedding Day</p>
           </div>
 
           <div
-            class="mid ephesis animate__animated animate__fadeIn animate__delay-1s animate__slower"
+            class="mid ephesis"
+            data-aos="fade-in"
+            data-aos-delay="400"
+            data-aos-duration="2000"
           >
             <p id="A">A</p>
             <p id="and">&</p>
@@ -78,19 +80,28 @@
 
           <div class="groom ephesis">
             <p
-              class="first animate__animated animate__fadeIn animate__delay-2s animate__slower"
+              class="first"
+              data-aos="fade-in"
+              data-aos-delay="1000"
+              data-aos-duration="2000"
             >
               Annisa
             </p>
             <p
-              class="second animate__animated animate__fadeIn animate__delay-2s animate__slower"
+              class="second"
+              data-aos="fade-in"
+              data-aos-delay="1000"
+              data-aos-duration="2000"
             >
               Bagas
             </p>
           </div>
 
           <div
-            class="bottom animate__animated animate__fadeIn animate__delay-1s animate__slower"
+            class="bottom"
+            data-aos="fade-in"
+            data-aos-delay="400"
+            data-aos-duration="2000"
           >
             <h4 class="courgette">Dear,</h4>
             <h5 class="crimsonText">Banu Prabowo</h5>
@@ -106,7 +117,10 @@
         </div>
 
         <div
-          class="footer ephesis animate__animated animate__fadeIn animate__delay-1s animate__slower"
+          class="footer ephesis"
+          data-aos="fade-in"
+          data-aos-delay="400"
+          data-aos-duration="2000"
         >
           <p class="A">A</p>
           <p class="and">&</p>
@@ -117,23 +131,43 @@
       <!-- page 1.1.1 first -->
       <div class="section section-2">
         <div class="cover" id="first">
-          <div class="top ephesis first autoShow">
+          <div
+            class="top ephesis first"
+            data-aos="fade-up"
+            data-aos-delay="1000"
+            data-aos-duration="2000"
+          >
             <p class="top-1">Its Our</p>
             <p class="top-2">Wedding Day</p>
           </div>
 
-          <div class="mid ephesis autoShow">
+          <div
+            class="mid ephesis"
+            data-aos="fade-up"
+            data-aos-delay="1000"
+            data-aos-duration="2000"
+          >
             <p id="A">A</p>
             <p id="and">&</p>
             <p id="B">B</p>
           </div>
 
-          <div class="groom ephesis autoShow">
+          <div
+            class="groom ephesis"
+            data-aos="fade-up"
+            data-aos-delay="1000"
+            data-aos-duration="2000"
+          >
             <p class="first">Annisa</p>
             <p class="second">Bagas</p>
           </div>
 
-          <div class="bottom first autoShow">
+          <div
+            class="bottom first"
+            data-aos="fade-up"
+            data-aos-delay="1000"
+            data-aos-duration="2000"
+          >
             <p class="courgette">06.09.2025</p>
           </div>
         </div>
@@ -238,7 +272,13 @@
               </div>
 
               <div class="icon-ig autoShow">
-                <img src="img/instagram.png" alt="" />
+                <a
+                  href="https://www.instagram.com/annisaekah/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src="img/instagram.png" alt="Instagram" />
+                </a>
               </div>
             </div>
 
@@ -257,12 +297,18 @@
               <p class="full-name courgette autoShow">Bagas Yoga Prasetyo</p>
               <div class="text2 crimson-pro autoShow">
                 <p>Putra dari :</p>
-                <p>Bapak Syarif Hidayat, S.Pd</p>
-                <p>Ibu Sugihastiti</p>
+                <p>Bapak Syarif Hidayat, S.Pd.</p>
+                <p>Ibu Sugihastiti, A.Md. Kep.</p>
               </div>
 
               <div class="icon-ig autoShow">
-                <img src="img/instagram.png" alt="" />
+                <a
+                  href="https://www.instagram.com/bagasyoga_p/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src="img/instagram.png" alt="Instagram" />
+                </a>
               </div>
             </div>
           </div>
@@ -341,9 +387,16 @@
               <div class="crimson-text detail">
                 <p>Bulurejo, RT 04 RW 01, Kec. Ayah, Kab. Kebumen</p>
               </div>
-              <div class="maps">
-                <p>Google Maps</p>
-              </div>
+              <a
+                href="https://maps.app.goo.gl/SjMkrFXh9xjty2HcA"
+                target="_blank"
+                rel="noopener noreferrer"
+                style="text-decoration: none"
+              >
+                <div class="maps">
+                  <p>Google Maps</p>
+                </div>
+              </a>
             </div>
 
             <p class="akad courgette autoShow">Tasyakuran</p>
@@ -362,9 +415,16 @@
                   Purbalingga
                 </p>
               </div>
-              <div class="maps">
-                <p>Google Maps</p>
-              </div>
+              <a
+                href="https://maps.app.goo.gl/rLdgbji5hkfeynGp6"
+                target="_blank"
+                rel="noopener noreferrer"
+                style="text-decoration: none"
+              >
+                <div class="maps">
+                  <p>Google Maps</p>
+                </div>
+              </a>
             </div>
           </div>
         </div>
@@ -509,24 +569,25 @@
           </h2>
           <div class="card">
             <div class="container">
-              <p class="bank">BCA</p>
-              <p class="name">A.n Annisa Eka Haryati</p>
-              <p class="bank-account">123456789</p>
-              <button>Copy Rekening</button>
+              <p class="bank">Bank Mandiri</p>
+              <p class="name">A.n BAGAS YOGA PRASETYO</p>
+              <p class="bank-account">1370021033325</p>
+              <button class="copyBtn">Copy Rekening</button>
             </div>
 
             <div class="container">
-              <p class="bank">BCA</p>
-              <p class="name">A.n Annisa Eka Haryati</p>
-              <p class="bank-account">123456789</p>
-              <button>Copy Rekening</button>
+              <p class="bank">Bank Mandiri</p>
+              <p class="name">A.n ANNISA EKA HARYATI</p>
+              <p class="bank-account">1850004532492</p>
+              <button class="copyBtn">Copy Rekening</button>
             </div>
 
             <div class="container">
-              <p class="bank">BCA</p>
-              <p class="name">A.n Annisa Eka Haryati</p>
-              <p class="bank-account">123456789</p>
-              <button>Copy Rekening</button>
+              <p class="bank">Alamat Rumah</p>
+              <p class="bank-account">
+                Desa Bulurejo, RT 04 RW 01, Kec. Ayah, Kab. Kebumen
+              </p>
+              <button class="copyBtn">Copy Rekening</button>
             </div>
           </div>
         </div>
@@ -571,7 +632,7 @@
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script>
       AOS.init({
-        duration: 1000, // durasi animasi
+        duration: 5000, // durasi animasi
         once: true, // animasi hanya sekali
       });
     </script>

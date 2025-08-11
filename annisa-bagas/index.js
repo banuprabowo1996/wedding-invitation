@@ -1,4 +1,59 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // copy button
+  const copyBtns = document.querySelectorAll(".copyBtn");
+
+  copyBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const rekeningEl = btn.parentElement.querySelector(".bank-account");
+      const rekening = rekeningEl.textContent.trim();
+
+      navigator.clipboard
+        .writeText(rekening)
+        .then(() => {
+          btn.textContent = "Copied!";
+          setTimeout(() => {
+            btn.textContent = "Copy Rekening";
+          }, 2000);
+        })
+        .catch((err) => {
+          console.error("Gagal menyalin teks:", err);
+        });
+    });
+  });
+
+  // delay animation
+  const autoShowEls = document.querySelectorAll(".autoShow");
+  const fadeUpEls = document.querySelectorAll(".timeline-item.fadeUp");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        if (entry.target.classList.contains("autoShow")) {
+          // Delay fixed 1.5s untuk autoShow
+          setTimeout(() => {
+            entry.target.classList.add("animate");
+          }, 1500);
+        }
+
+        if (entry.target.classList.contains("fadeUp")) {
+          // Delay berdasarkan urutan untuk fadeUp
+          const index = [...fadeUpEls].indexOf(entry.target);
+          setTimeout(() => {
+            entry.target.classList.add("animate");
+          }, index * 500); // 0.5s antar item
+        }
+
+        observer.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.2 }
+  );
+
+  autoShowEls.forEach((el) => observer.observe(el));
+  fadeUpEls.forEach((el) => observer.observe(el));
+
   // === Open invitation button ===
   const openInvitationBtn = document.getElementById("openInvitation");
 
@@ -60,6 +115,11 @@ document.addEventListener("DOMContentLoaded", () => {
     sections.forEach((section) => {
       section.style.display = "block";
     });
+
+    // Pastikan AOS refresh setelah display:block
+    setTimeout(() => {
+      AOS.refresh();
+    }, 50); // jeda biar DOM sempat update
 
     playAudio();
   }
