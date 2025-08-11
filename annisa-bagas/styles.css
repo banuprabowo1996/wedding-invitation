@@ -559,6 +559,7 @@ hr.new5 {
   padding: 7px 23px;
   border: 2px solid #feda97;
   border-radius: 11px;
+  color: #feda97;
 }
 /* ------------------------------------------- 1.6 our-moments start ----------------  */
 .our-moments {
@@ -806,13 +807,32 @@ hr.new5 {
 
 /* ---------------- animation */
 
-.autoShow {
+/* .autoShow {
   animation: text-appear both;
   animation-timeline: view();
   animation-range: entry 20% cover 100vh;
+} */
+
+.autoShow {
+  opacity: 0;
+}
+
+.autoShow.animate {
+  animation: text-appear 1s ease forwards;
 }
 
 @keyframes text-appear {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* @keyframes text-appear {
   from {
     opacity: o;
     transform: translateY(100px);
@@ -821,7 +841,7 @@ hr.new5 {
     opacity: 1;
     transform: translateY(0);
   }
-}
+} */
 
 .fadeUp {
   animation: fadeUp both;
