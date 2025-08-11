@@ -1,4 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // query params
+  const urlParams = new URLSearchParams(window.location.search);
+  const nama = urlParams.get("to") || "Bapak/Ibu/Saudara/i";
+
+  const namaContainer = document.querySelector(".cover h5");
+  namaContainer.innerText = `${nama}`;
+
+  document.querySelector("#nama").value = nama;
+
   // copy button
   const copyBtns = document.querySelectorAll(".copyBtn");
 
