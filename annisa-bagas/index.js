@@ -1,4 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // AOS
+  AOS.init({
+    once: true, // biar animasi jalan sekali
+    duration: 5000,
+  });
+
   // query params
   const urlParams = new URLSearchParams(window.location.search);
   const nama = urlParams.get("to") || "Bapak/Ibu/Saudara/i";
@@ -40,10 +46,10 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!entry.isIntersecting) return;
 
         if (entry.target.classList.contains("autoShow")) {
-          // Delay fixed 1.5s untuk autoShow
+          // Delay fixed 1s untuk autoShow
           setTimeout(() => {
             entry.target.classList.add("animate");
-          }, 1500);
+          }, 1000);
         }
 
         if (entry.target.classList.contains("fadeUp")) {
@@ -117,24 +123,38 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function enableScroll() {
-    window.onscroll = function () {};
-    rootElement.style.scrollBehavior = "smooth";
-
     const sections = document.querySelectorAll(".section-2");
+
     sections.forEach((section) => {
-      section.style.display = "block";
+      // Reset atribut AOS agar dianggap fresh
+      section.querySelectorAll("[data-aos]").forEach((el) => {
+        el.classList.remove("aos-animate");
+      });
+
+      section.style.display = "block"; // munculkan
     });
 
-    // Pastikan AOS refresh setelah display:block
+    // Paksa browser render dulu
+    sections[0].getBoundingClientRect();
+
+    // Baru refresh AOS
     setTimeout(() => {
-      AOS.refresh();
-    }, 50); // jeda biar DOM sempat update
+      AOS.refreshHard();
+    }, 100);
+
+    // Hilangkan cover
+    const cover = document.querySelector(".section:not(.section-2)");
+    if (cover) {
+      setTimeout(() => {
+        cover.style.display = "none";
+      }, 1000);
+    }
 
     playAudio();
   }
 
   // === Countdown ===
-  const targetTime = new Date(2025, 9, 6, 0, 0, 0).getTime(); // 6 Okt 2025
+  const targetTime = new Date(2025, 8, 6, 9, 0, 0).getTime(); // 6 sept 2025
 
   function formatTime(value) {
     return String(value).padStart(2, "0");
