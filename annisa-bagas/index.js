@@ -46,10 +46,12 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!entry.isIntersecting) return;
 
         if (entry.target.classList.contains("autoShow")) {
-          // Delay fixed 1s untuk autoShow
+          // Delay tangkap dari class untuk autoShow
+          const delay = entry.target.dataset.delay || 1000; // default 1s
+
           setTimeout(() => {
             entry.target.classList.add("animate");
-          }, 1000);
+          }, delay);
         }
 
         if (entry.target.classList.contains("fadeUp")) {
