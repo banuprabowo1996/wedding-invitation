@@ -103,6 +103,20 @@ document.addEventListener("DOMContentLoaded", () => {
   const song = document.querySelector("#song");
   const audioIcon = document.querySelector(".audio-icon-wrapper i");
 
+  audioIconWrapper.onclick = function () {
+    if (isPlaying) {
+      song.pause();
+      audioIcon.classList.remove("bi-disc");
+      audioIcon.classList.add("bi-pause-circle");
+    } else {
+      song.play();
+      audioIcon.classList.add("bi-disc");
+      audioIcon.classList.remove("bi-pause-circle");
+    }
+
+    isPlaying = !isPlaying;
+  };
+
   function disableScroll() {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     const scrollLeft =
