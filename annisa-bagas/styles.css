@@ -669,7 +669,7 @@ hr.new5 {
   align-items: center;
 }
 .gift .ephesis {
-  font-size: 10vw;
+  font-size: clamp(20px, 10vw, 50px);
   text-align: center;
 }
 .gift .crimson-pro {
@@ -895,6 +895,34 @@ hr.new5 {
   color: black;
 }
 
+/* footer iklan */
+/* footer */
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 2rem 0;
+  background-color: #f2f2f2;
+  color: rgb(44, 44, 44);
+}
+
+footer a {
+  color: var(--bg);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: black;
+  box-shadow: var(--shadow);
+}
+
+footer li {
+  list-style: none;
+  display: inline;
+  margin: 0.5rem;
+}
+
 /* btn bootstrap */
 #submitButton:active,
 #submitButton:focus {
@@ -928,6 +956,15 @@ hr.new5 {
   animation: text-appear 1s ease forwards;
 }
 
+.autoShowDelayed {
+  opacity: 0;
+}
+
+.autoShowDelayed.animate {
+  animation: text-appear 1s ease forwards;
+  animation-delay: var(--delay, 1s);
+}
+
 @keyframes text-appear {
   from {
     opacity: 0;
@@ -938,17 +975,6 @@ hr.new5 {
     transform: translateY(0);
   }
 }
-
-/* @keyframes text-appear {
-  from {
-    opacity: o;
-    transform: translateY(100px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-} */
 
 .fadeUp {
   animation: fadeUp both;
@@ -973,6 +999,35 @@ hr.new5 {
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
+  }
+}
+
+/* audio */
+.audio-icon-wrapper {
+  width: 3rem;
+  height: 3rem;
+  font-size: 3rem;
+  position: fixed;
+  bottom: 2.5rem;
+  right: 2rem;
+  cursor: pointer;
+  color: white;
+  opacity: 0.5;
+  mix-blend-mode: difference;
+  animation: rotating 4s linear infinite;
+  transform-origin: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 0;
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(1turn);
   }
 }
 
