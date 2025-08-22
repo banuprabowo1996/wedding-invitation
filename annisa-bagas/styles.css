@@ -295,8 +295,8 @@ body {
 }
 
 .cover .bottom .btn-open {
-  margin-top: 18px;
-  padding: 7px 13px;
+  margin-top: 24px;
+  padding: 4px;
   background-image: linear-gradient(to right, #f2b647, #ffe481);
   border: 1px solid white;
   color: white;
