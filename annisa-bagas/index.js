@@ -1,4 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // AOS
+  AOS.init({
+    once: true, // biar animasi jalan sekali
+    duration: 5000,
+  });
+
   // query params
   const urlParams = new URLSearchParams(window.location.search);
   const nama = urlParams.get("to") || "Bapak/Ibu/Saudara/i";
@@ -40,10 +46,10 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!entry.isIntersecting) return;
 
         if (entry.target.classList.contains("autoShow")) {
-          // Delay fixed 1.5s untuk autoShow
+          // Delay fixed 1s untuk autoShow
           setTimeout(() => {
             entry.target.classList.add("animate");
-          }, 1500);
+          }, 1000);
         }
 
         if (entry.target.classList.contains("fadeUp")) {
@@ -117,24 +123,38 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function enableScroll() {
-    window.onscroll = function () {};
-    rootElement.style.scrollBehavior = "smooth";
-
     const sections = document.querySelectorAll(".section-2");
+
     sections.forEach((section) => {
-      section.style.display = "block";
+      // Reset atribut AOS agar dianggap fresh
+      section.querySelectorAll("[data-aos]").forEach((el) => {
+        el.classList.remove("aos-animate");
+      });
+
+      section.style.display = "block"; // munculkan
     });
 
-    // Pastikan AOS refresh setelah display:block
+    // Paksa browser render dulu
+    sections[0].getBoundingClientRect();
+
+    // Baru refresh AOS
     setTimeout(() => {
-      AOS.refresh();
-    }, 50); // jeda biar DOM sempat update
+      AOS.refreshHard();
+    }, 100);
+
+    // Hilangkan cover
+    const cover = document.querySelector(".section:not(.section-2)");
+    if (cover) {
+      setTimeout(() => {
+        cover.style.display = "none";
+      }, 1000);
+    }
 
     playAudio();
   }
 
   // === Countdown ===
-  const targetTime = new Date(2025, 9, 6, 0, 0, 0).getTime(); // 6 Okt 2025
+  const targetTime = new Date(2025, 8, 6, 9, 0, 0).getTime(); // 6 sept 2025
 
   function formatTime(value) {
     return String(value).padStart(2, "0");
@@ -165,4 +185,112 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const interval = setInterval(updateCountdown, 1000);
   updateCountdown();
+
+  // fetch comments when the page loads
+  const tag = "annisa-bagas";
+
+  function timeAgo(dateString) {
+    const now = new Date();
+    const created = new Date(dateString);
+    const diffMs = now - created;
+    const diffSec = Math.floor(diffMs / 1000);
+    const diffMin = Math.floor(diffSec / 60);
+    const diffHour = Math.floor(diffMin / 60);
+    const diffDay = Math.floor(diffHour / 24);
+
+    if (diffDay > 0) return `${diffDay} Day${diffDay > 1 ? "s" : ""} ago`;
+    if (diffHour > 0) return `${diffHour} Hour${diffHour > 1 ? "s" : ""} ago`;
+    if (diffMin > 0) return `${diffMin} Minute${diffMin > 1 ? "s" : ""} ago`;
+    return "Just now";
+  }
+
+  function fetchComments() {
+    fetch(`https://be-wedding-inv.onrender.com/comments?tag=${tag}`)
+      .then((response) => response.json())
+      .then((data) => {
+        const commentList = document.getElementById("commentList");
+        commentList.innerHTML = ""; // Clear existing comments
+
+        data.reverse().forEach((comment) => {
+          const div = document.createElement("div");
+          div.classList.add("message-buble");
+          div.innerHTML = `
+            <p class="message-by">${comment.name}</p>
+            <p class="message-content crimson-pro mt-2">
+              ${comment.comment}
+            </p>
+            <div class="message-time mt-4">
+              <img src="img/clock.svg" alt="" />
+              <p>${timeAgo(comment.created_at)}</p>
+            </div>
+          `;
+          commentList.appendChild(div);
+        });
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  }
+
+  fetchComments();
+
+  const submitBtn = document.getElementById("submitButton");
+  if (submitBtn) {
+    submitBtn.addEventListener("click", function () {
+      const name = document.getElementById("nama").value.trim();
+      const comment = document.getElementById("message").value.trim();
+
+      if (!name || !comment) {
+        alert("Silahkan isi name dan comment terlebih dahulu");
+        return;
+      }
+
+      fetch("https://be-wedding-inv.onrender.com/comment", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, comment, tag }),
+      })
+        .then((response) => response.text())
+        .then((data) => {
+          console.log("Success:", data);
+          alert("Comment submitted successfully!");
+          fetchComments(); // refresh list
+          // Clear form inputs
+          document.getElementById("nama").value = "";
+          document.getElementById("message").value = "";
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+          alert("There was an error submitting your comment.");
+        });
+    });
+  }
+
+  const form = document.getElementById("my-form");
+  const input = document.getElementById("nama");
+  const comments = document.getElementById("comments");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault(); // ⛔ hentikan reload default
+
+    const text = input.value.trim();
+    if (!text) return;
+
+    // bikin elemen comment baru
+    const div = document.createElement("div");
+    div.classList.add("message-buble");
+    div.innerHTML = `
+      <p class="message-by">You</p>
+      <p class="message-content crimson-pro mt-2">${text}</p>
+      <div class="message-time">
+        <img src="img/clock.svg" alt="" />
+        <p>Just now</p>
+      </div>
+    `;
+
+    comments.appendChild(div);
+    input.value = ""; // reset input
+  });
 });
