@@ -906,6 +906,11 @@ footer {
   color: rgb(44, 44, 44);
 }
 
+footer small.block {
+  font-size: 10px; /* atur sesuai kebutuhan */
+  color: #666; /* opsional: kasih warna lebih soft */
+}
+
 footer a {
   color: var(--bg);
   font-weight: bold;
@@ -954,15 +959,6 @@ footer li {
 
 .autoShow.animate {
   animation: text-appear 1s ease forwards;
-}
-
-.autoShowDelayed {
-  opacity: 0;
-}
-
-.autoShowDelayed.animate {
-  animation: text-appear 1s ease forwards;
-  animation-delay: var(--delay, 1s);
 }
 
 @keyframes text-appear {
