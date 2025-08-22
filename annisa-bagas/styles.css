@@ -296,7 +296,7 @@ body {
 
 .cover .bottom .btn-open {
   margin-top: 24px;
-  padding: 4px;
+  padding: 7px 13px;
   background-image: linear-gradient(to right, #f2b647, #ffe481);
   border: 1px solid white;
   color: white;
@@ -672,24 +672,34 @@ hr.new5 {
   font-size: 16px;
 }
 .wishes-form textarea {
+  color: black;
   background-color: white;
   border-radius: 5px;
+  padding: 4px 0 0 10px;
 }
 .wishes-form textarea::placeholder {
   color: gray;
-  padding: 4px 0 0 10px;
 }
 
 .container-message {
   margin-top: 100px;
+  overflow-y: scroll;
 }
 .container-message .message-buble {
+  position: relative; /* supaya child absolute ngikut parent */
   width: 260px;
-  height: 131px;
+  height: 131px; /* tinggi fix */
   background-color: #ac9f8c;
   border-radius: 5px;
   padding: 9px;
   text-align: left;
+  margin-bottom: 19px;
+
+  display: flex;
+  flex-direction: column;
+}
+.container-message .message-by {
+  font-size: 18px;
 }
 .container-message .message-content {
   color: black;
@@ -697,6 +707,9 @@ hr.new5 {
   margin-left: 2px;
 }
 .container-message .message-time {
+  position: absolute;
+  bottom: 9px; /* jarak dari bawah */
+  left: 9px; /* biar rata kiri */
   color: black;
   font-size: 12px;
   display: flex;
@@ -827,6 +840,15 @@ hr.new5 {
 }
 .close:hover {
   color: black;
+}
+
+/* btn bootstrap */
+#submitButton:active,
+#submitButton:focus {
+  background-color: white !important;
+  color: black !important;
+  border: 1px solid #fef1d4; /* biar masih ada border, opsional */
+  box-shadow: none; /* hilangin efek glow biru bootstrap */
 }
 
 /* ---------------- animation */
