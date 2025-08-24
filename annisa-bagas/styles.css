@@ -389,7 +389,7 @@ hr.new5 {
 .couples-container {
   width: 86%;
   height: 1833px;
-  padding-left: 15px;
+  /* padding-left: 15px; */
   background: linear-gradient(
     to bottom,
     rgba(0, 0, 0, 0.3),
