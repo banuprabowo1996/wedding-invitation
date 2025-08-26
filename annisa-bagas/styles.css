@@ -528,7 +528,7 @@ hr.new5 {
   padding-top: 40px;
 }
 
-.the-days .container,
+.the-days .container-the-days,
 .our-moments .container,
 .gift .container-gift,
 .gift .container-whises {
@@ -958,7 +958,16 @@ footer li {
   padding-left: calc(var(--bs-gutter-x) * 0.5) !important;
   padding-right: calc(var(--bs-gutter-x) * 0.5) !important;
 }
-
+/* Default: semua container tanpa padding */
+.container {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+/* Kecuali container yang ada di dalam .our-moments → balikin padding */
+.our-moments .container {
+  padding-left: calc(var(--bs-gutter-x) * 0.5) !important;
+  padding-right: calc(var(--bs-gutter-x) * 0.5) !important;
+}
 /* ---------------- animation */
 
 /* .autoShow {
