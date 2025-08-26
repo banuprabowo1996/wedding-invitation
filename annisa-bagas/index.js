@@ -22,12 +22,15 @@ document.addEventListener("DOMContentLoaded", () => {
       const rekeningEl = btn.parentElement.querySelector(".bank-account");
       const rekening = rekeningEl.textContent.trim();
 
+      // Simpan teks asli button
+      const originalText = btn.textContent;
+
       navigator.clipboard
         .writeText(rekening)
         .then(() => {
           btn.textContent = "Copied!";
           setTimeout(() => {
-            btn.textContent = "Copy Rekening";
+            btn.textContent = originalText; // balikin sesuai teks awal
           }, 2000);
         })
         .catch((err) => {
