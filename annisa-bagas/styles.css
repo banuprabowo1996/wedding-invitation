@@ -528,7 +528,7 @@ hr.new5 {
   padding-top: 40px;
 }
 
-.the-days .container,
+.the-days .container-the-days,
 .our-moments .container,
 .gift .container-gift,
 .gift .container-whises {
@@ -659,6 +659,16 @@ hr.new5 {
 .our-moments .fifth img {
   width: 32%;
   height: auto;
+}
+.our-moments .fourth {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 2fr; /* kiri & kanan 2x lebih besar */
+  gap: 16px; /* jarak antar foto */
+}
+.our-moments .fourth img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 /* ------------------------------------------- 1.7 gift start ----------------  */
 .gift .container-gift {
@@ -882,6 +892,10 @@ hr.new5 {
   border-radius: 2px;
   font-size: 14px;
 }
+.bank-account a {
+  color: inherit; /* ikut warna teks biasa */
+  text-decoration: none; /* hilangin underline */
+}
 .close {
   color: #aaa;
   position: absolute;
@@ -944,7 +958,20 @@ footer li {
   outline: none !important;
   box-shadow: 0 0 5px #feda97; /* opsional biar ada glow */
 }
-
+.our-moments .container {
+  padding-left: calc(var(--bs-gutter-x) * 0.5) !important;
+  padding-right: calc(var(--bs-gutter-x) * 0.5) !important;
+}
+/* Default: semua container tanpa padding */
+.container {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+/* Kecuali container yang ada di dalam .our-moments → balikin padding */
+.our-moments .container {
+  padding-left: calc(var(--bs-gutter-x) * 0.5) !important;
+  padding-right: calc(var(--bs-gutter-x) * 0.5) !important;
+}
 /* ---------------- animation */
 
 /* .autoShow {
