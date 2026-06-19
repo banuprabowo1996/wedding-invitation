@@ -178,7 +178,7 @@ body {
 }
 
 .scroll-hint {
-  position: absolute;
+  position: fixed;
   bottom: 40px;
   left: 50%;
   transform: translateX(-50%);
@@ -191,7 +191,14 @@ body {
   letter-spacing: 2px;
   text-transform: uppercase;
   animation: float-down 2s ease-in-out infinite;
-  z-index: 2;
+  z-index: 99;
+  opacity: 1;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.scroll-hint.hidden {
+  opacity: 0;
 }
 
 .scroll-hint i {

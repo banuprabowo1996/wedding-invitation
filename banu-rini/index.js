@@ -16,6 +16,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const namaInput = document.querySelector("#nama");
   if (namaInput) namaInput.value = nama;
 
+  const scrollHint = document.querySelector("#scrollHint");
+  if (scrollHint) scrollHint.classList.add("hidden");
+
   // ==================== COPY BUTTON ====================
   const copyBtns = document.querySelectorAll(".copyBtn");
   copyBtns.forEach((btn) => {
@@ -24,29 +27,35 @@ document.addEventListener("DOMContentLoaded", () => {
       const rekening = rekeningEl ? rekeningEl.textContent.trim() : "";
       const originalText = btn.textContent;
 
-      navigator.clipboard.writeText(rekening).then(() => {
-        btn.textContent = "Tersalin!";
-        setTimeout(() => {
-          btn.textContent = originalText;
-        }, 2000);
-      }).catch((err) => {
-        console.error("Gagal menyalin:", err);
-      });
+      navigator.clipboard
+        .writeText(rekening)
+        .then(() => {
+          btn.textContent = "Tersalin!";
+          setTimeout(() => {
+            btn.textContent = originalText;
+          }, 2000);
+        })
+        .catch((err) => {
+          console.error("Gagal menyalin:", err);
+        });
     });
   });
 
   // ==================== INTERSECTION OBSERVER ====================
   const autoShowEls = document.querySelectorAll(".autoShow");
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-      const delay = entry.target.dataset.delay || 800;
-      setTimeout(() => {
-        entry.target.classList.add("animate");
-      }, delay);
-      observer.unobserve(entry.target);
-    });
-  }, { threshold: 0.15 });
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const delay = entry.target.dataset.delay || 800;
+        setTimeout(() => {
+          entry.target.classList.add("animate");
+        }, delay);
+        observer.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.15 }
+  );
 
   autoShowEls.forEach((el) => observer.observe(el));
 
@@ -62,10 +71,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const modalClose = document.querySelector(".modal-close");
 
   if (modalOpen) {
-    modalOpen.onclick = () => { modal.style.display = "flex"; };
+    modalOpen.onclick = () => {
+      modal.style.display = "flex";
+    };
   }
   if (modalClose) {
-    modalClose.onclick = () => { modal.style.display = "none"; };
+    modalClose.onclick = () => {
+      modal.style.display = "none";
+    };
   }
   window.onclick = (event) => {
     if (event.target === modal) modal.style.display = "none";
@@ -99,7 +112,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function disableScroll() {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+    const scrollLeft =
+      window.pageXOffset || document.documentElement.scrollLeft;
     window.onscroll = () => {
       window.scrollTo(scrollLeft, scrollTop);
     };
@@ -125,6 +139,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (sections[0]) sections[0].getBoundingClientRect();
 
+    let maxTextDelay = 0;
+    sections[0].querySelectorAll(".autoShow").forEach((el) => {
+      const delay = parseInt(el.dataset.delay) || 800;
+      if (delay > maxTextDelay) maxTextDelay = delay;
+      setTimeout(() => {
+        el.classList.add("animate");
+      }, delay);
+    });
+
     setTimeout(() => {
       AOS.refreshHard();
     }, 100);
@@ -133,7 +156,22 @@ document.addEventListener("DOMContentLoaded", () => {
     if (cover) {
       setTimeout(() => {
         cover.style.display = "none";
-      }, 1000);
+      }, 500);
+    }
+
+    if (scrollHint) {
+      setTimeout(() => {
+        scrollHint.classList.remove("hidden");
+
+        const lastSection = document.querySelector(".last-section");
+        if (lastSection) {
+          new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+              scrollHint.classList.toggle("hidden", entry.isIntersecting);
+            });
+          }, { threshold: 0.1 }).observe(lastSection);
+        }
+      }, maxTextDelay + 800 + 2000);
     }
 
     window.onscroll = null;
@@ -161,7 +199,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const hours = Math.floor(
+      (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
