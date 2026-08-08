@@ -122,6 +122,22 @@ body {
   padding: 20px;
 }
 
+.cover-ornament {
+  width: clamp(90px, 14vw, 160px);
+  height: auto;
+  position: absolute;
+}
+
+.cover-ornament-top-left {
+  top: 0;
+  left: 0;
+}
+
+.cover-ornament-bottom-right {
+  bottom: 0;
+  right: 0;
+}
+
 .cover-sub {
   font-size: 0.875rem;
   letter-spacing: 6px;
@@ -277,7 +293,7 @@ body {
 
 .promises-img {
   width: 100%;
-  max-height: 400px;
+  max-height: 700px;
   object-fit: cover;
   border: 2px solid var(--glass-border);
 }
