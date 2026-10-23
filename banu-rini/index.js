@@ -19,6 +19,29 @@ document.addEventListener("DOMContentLoaded", () => {
   const scrollHint = document.querySelector("#scrollHint");
   if (scrollHint) scrollHint.classList.add("hidden");
 
+  // Show/Hide Tasyakuran & Akad based on URL params
+  const tasyakuranEl = document.getElementById("tasyakuran");
+  const akadEl = document.getElementById("akad");
+
+  if (tasyakuranEl && akadEl) {
+    const urlValues = Array.from(urlParams.values());
+    const urlKeys = Array.from(urlParams.keys());
+
+    const isTS = urlValues.includes("ts") || urlKeys.includes("ts");
+    const isA = urlValues.includes("a") || urlKeys.includes("a");
+
+    if (isTS) {
+      tasyakuranEl.style.display = "block";
+      akadEl.style.display = "none";
+    } else if (isA) {
+      tasyakuranEl.style.display = "none";
+      akadEl.style.display = "block";
+    } else {
+      tasyakuranEl.style.display = "block";
+      akadEl.style.display = "block";
+    }
+  }
+
   // ==================== COPY BUTTON ====================
   const copyBtns = document.querySelectorAll(".copyBtn");
   copyBtns.forEach((btn) => {
