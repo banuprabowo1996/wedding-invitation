@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="bunga" viewBox="-50 -20 345 550" width="345" height="550" xmlns:c2pa="http://c2pa.org/manifest">
+<style>
+.bunga { overflow: visible; }
+.bunga .sway, .bunga .bloom, .bunga .leaf-sway { transform-box: fill-box; }
+.bunga .bloom { transform-origin: 50% 100%; animation: mekar 1.6s cubic-bezier(.2,.8,.2,1) both; animation-delay: var(--d, 0s); }
+.bunga .sway { transform-origin: 50% 100%; animation: goyang 5.5s ease-in-out infinite alternate; animation-delay: var(--d, 0s); }
+.bunga .leaf-sway { transform-origin: 0% 50%; animation: daun 4.2s ease-in-out infinite alternate; animation-delay: var(--d, 0s); }
+.bunga .stem { stroke-dasharray: 1; stroke-dashoffset: 1; animation: tumbuh 2.2s ease-out forwards; }
+.bunga .leaves { animation: muncul 1s ease-out .4s both; }
+@keyframes tumbuh { to { stroke-dashoffset: 0; } }
+@keyframes muncul { from { opacity: 0; } to { opacity: 1; } }
+@keyframes mekar { from { transform: scale(0) rotate(-25deg); opacity: 0; } to { transform: scale(1) rotate(0); opacity: 1; } }
+@keyframes goyang { from { transform: rotate(-2.8deg) scale(1); } to { transform: rotate(2.8deg) scale(1.03); } }
+@keyframes daun { from { transform: rotate(-4deg); } to { transform: rotate(5deg); } }
+@media (prefers-reduced-motion: reduce) {
+  .bunga *, .bunga { animation: none !important; }
+  .bunga .stem { stroke-dashoffset: 0; }
+}
+</style>
+
+<defs>
+  <radialGradient id="gOut" cx="50%" cy="60%" r="65%"><stop offset="0" stop-color="#f4a6b0"/><stop offset="1" stop-color="#e9798f"/></radialGradient>
+  <radialGradient id="gMid" cx="50%" cy="55%" r="65%"><stop offset="0" stop-color="#e98aa0"/><stop offset="1" stop-color="#d6567a"/></radialGradient>
+  <radialGradient id="gIn" cx="50%" cy="50%" r="65%"><stop offset="0" stop-color="#d24b6f"/><stop offset="1" stop-color="#a62a52"/></radialGradient>
+  <linearGradient id="gLeaf" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#6d7d3c"/><stop offset="1" stop-color="#9aa86a"/></linearGradient>
+  <radialGradient id="gDaisy" cx="50%" cy="50%" r="60%"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#f7e3e6"/></radialGradient>
+
+  <path id="petalO" d="M0 0 C-24 -8 -30 -38 -8 -50 C0 -54 0 -54 8 -50 C30 -38 24 -8 0 0Z"/>
+  <g id="peony">
+    <g fill="url(#gOut)" stroke="#c9566f" stroke-width="1" stroke-linejoin="round">
+      <use href="#petalO" transform="rotate(10.0) scale(1)"/>
+      <use href="#petalO" transform="rotate(55.0) scale(1)"/>
+      <use href="#petalO" transform="rotate(100.0) scale(1)"/>
+      <use href="#petalO" transform="rotate(145.0) scale(1)"/>
+      <use href="#petalO" transform="rotate(190.0) scale(1)"/>
+      <use href="#petalO" transform="rotate(235.0) scale(1)"/>
+      <use href="#petalO" transform="rotate(280.0) scale(1)"/>
+      <use href="#petalO" transform="rotate(325.0) scale(1)"/>
+    </g>
+    <g fill="url(#gMid)" stroke="#b83e63" stroke-width="1" stroke-linejoin="round">
+      <use href="#petalO" transform="rotate(25.0) scale(.72)"/>
+      <use href="#petalO" transform="rotate(76.42857142857143) scale(.72)"/>
+      <use href="#petalO" transform="rotate(127.85714285714286) scale(.72)"/>
+      <use href="#petalO" transform="rotate(179.28571428571428) scale(.72)"/>
+      <use href="#petalO" transform="rotate(230.71428571428572) scale(.72)"/>
+      <use href="#petalO" transform="rotate(282.14285714285717) scale(.72)"/>
+      <use href="#petalO" transform="rotate(333.57142857142856) scale(.72)"/>
+    </g>
+    <g fill="url(#gIn)" stroke="#8f2447" stroke-width="1" stroke-linejoin="round">
+      <use href="#petalO" transform="rotate(5.0) scale(.46)"/>
+      <use href="#petalO" transform="rotate(65.0) scale(.46)"/>
+      <use href="#petalO" transform="rotate(125.0) scale(.46)"/>
+      <use href="#petalO" transform="rotate(185.0) scale(.46)"/>
+      <use href="#petalO" transform="rotate(245.0) scale(.46)"/>
+      <use href="#petalO" transform="rotate(305.0) scale(.46)"/>
+    </g>
+    <circle r="9" fill="#8f2447"/>
+    <path d="M-6 -2 C-2 -9 6 -6 5 1 C4 6 -3 7 -4 2" fill="none" stroke="#d24b6f" stroke-width="1.3" stroke-linecap="round"/>
+    <path d="M-30 -22 C-18 -34 -4 -36 4 -34 M20 -30 C30 -20 32 -6 30 4 M-24 14 C-14 28 4 30 14 24" fill="none" stroke="#fbd0d6" stroke-opacity=".7" stroke-width="1.4" stroke-linecap="round"/>
+  </g>
+  <g id="bud">
+    <path d="M0 0 C-18 -8 -18 -34 0 -48 C18 -34 18 -8 0 0Z" fill="url(#gMid)" stroke="#b83e63" stroke-width="1"/>
+    <path d="M0 0 C-8 -10 -6 -30 0 -48 C6 -30 8 -10 0 0Z" fill="url(#gIn)" opacity=".8"/>
+    <path d="M-10 4 C-16 -6 -14 -14 -8 -16 M10 4 C16 -6 14 -14 8 -16" stroke="#6d7d3c" stroke-width="2" fill="none" stroke-linecap="round"/>
+  </g>
+  <g id="daisy">
+    <ellipse cy="-20" rx="6" ry="19" fill="url(#gDaisy)" stroke="#e6c5cb" stroke-width=".8" transform="rotate(0.0)"/>
+    <ellipse cy="-20" rx="6" ry="19" fill="url(#gDaisy)" stroke="#e6c5cb" stroke-width=".8" transform="rotate(25.714285714285715)"/>
+    <ellipse cy="-20" rx="6" ry="19" fill="url(#gDaisy)" stroke="#e6c5cb" stroke-width=".8" transform="rotate(51.42857142857143)"/>
+    <ellipse cy="-20" rx="6" ry="19" fill="url(#gDaisy)" stroke="#e6c5cb" stroke-width=".8" transform="rotate(77.14285714285714)"/>
+    <ellipse cy="-20" rx="6" ry="19" fill="url(#gDaisy)" stroke="#e6c5cb" stroke-width=".8" transform="rotate(102.85714285714286)"/>
+    <ellipse cy="-20" rx="6" ry="19" fill="url(#gDaisy)" stroke="#e6c5cb" stroke-width=".8" transform="rotate(128.57142857142858)"/>
+    <ellipse cy="-20" rx="6" ry="19" fill="url(#gDaisy)" stroke="#e6c5cb" stroke-width=".8" transform="rotate(154.28571428571428)"/>
+    <ellipse cy="-20" rx="6" ry="19" fill="url(#gDaisy)" stroke="#e6c5cb" stroke-width=".8" transform="rotate(180.0)"/>
+    <ellipse cy="-20" rx="6" ry="19" fill="url(#gDaisy)" stroke="#e6c5cb" stroke-width=".8" transform="rotate(205.71428571428572)"/>
+    <ellipse cy="-20" rx="6" ry="19" fill="url(#gDaisy)" stroke="#e6c5cb" stroke-width=".8" transform="rotate(231.42857142857142)"/>
+    <ellipse cy="-20" rx="6" ry="19" fill="url(#gDaisy)" stroke="#e6c5cb" stroke-width=".8" transform="rotate(257.14285714285717)"/>
+    <ellipse cy="-20" rx="6" ry="19" fill="url(#gDaisy)" stroke="#e6c5cb" stroke-width=".8" transform="rotate(282.85714285714283)"/>
+    <ellipse cy="-20" rx="6" ry="19" fill="url(#gDaisy)" stroke="#e6c5cb" stroke-width=".8" transform="rotate(308.57142857142856)"/>
+    <ellipse cy="-20" rx="6" ry="19" fill="url(#gDaisy)" stroke="#e6c5cb" stroke-width=".8" transform="rotate(334.2857142857143)"/>
+    <circle r="10" fill="#d24b6f"/><circle r="5.5" fill="#f2b94b" opacity=".9"/>
+  </g>
+  <g id="leaf">
+    <path d="M0 0 C16 -17 42 -16 62 0 C42 16 16 17 0 0Z" fill="url(#gLeaf)" stroke="#55632c" stroke-width="1"/>
+    <path d="M2 0 L58 0 M16 0 L28 -8 M16 0 L28 8 M32 0 L44 -6 M32 0 L44 6" stroke="#55632c" stroke-width="1" stroke-opacity=".6" fill="none"/>
+  </g>
+  <g id="sprig">
+    <circle r="5" fill="#f4a6b0"/><circle r="2" fill="#d6567a"/>
+    <circle cx="-8" cy="6" r="4" fill="#f9c9d0"/><circle cx="8" cy="7" r="4" fill="#f9c9d0"/>
+  </g>
+</defs>
+
+<g class="stems"><path class="stem" pathLength="1" d="M120 120 C60 150 40 200 55 190 C80 225 150 235 130 270 C120 310 60 330 65 385 C70 440 70 470 60 490" fill="none" stroke="#5f6f33" stroke-width="3" stroke-linecap="round"/>
+<path class="stem" pathLength="1" d="M60 60 C100 90 140 100 120 125 M125 40 C130 80 110 100 120 125 M165 185 C140 200 135 240 130 270 M185 350 C150 340 120 330 100 380" fill="none" stroke="#6d7d3c" stroke-width="2" stroke-linecap="round"/>
+</g>
+<g class="leaves"><g transform="translate(18 72) rotate(-170) scale(0.8)"><g class="leaf-sway" style="--d:0.00s"><use href="#leaf"/></g></g>
+<g transform="translate(30 88) rotate(150) scale(0.7)"><g class="leaf-sway" style="--d:0.35s"><use href="#leaf"/></g></g>
+<g transform="translate(80 60) rotate(-60) scale(0.8)"><g class="leaf-sway" style="--d:0.70s"><use href="#leaf"/></g></g>
+<g transform="translate(95 92) rotate(-20) scale(0.7)"><g class="leaf-sway" style="--d:1.05s"><use href="#leaf"/></g></g>
+<g transform="translate(150 78) rotate(-25) scale(0.8)"><g class="leaf-sway" style="--d:1.40s"><use href="#leaf"/></g></g>
+<g transform="translate(170 110) rotate(-15) scale(0.75)"><g class="leaf-sway" style="--d:1.75s"><use href="#leaf"/></g></g>
+<g transform="translate(185 150) rotate(-30) scale(0.8)"><g class="leaf-sway" style="--d:2.10s"><use href="#leaf"/></g></g>
+<g transform="translate(55 170) rotate(20) scale(0.8)"><g class="leaf-sway" style="--d:0.00s"><use href="#leaf"/></g></g>
+<g transform="translate(75 200) rotate(35) scale(0.9)"><g class="leaf-sway" style="--d:0.35s"><use href="#leaf"/></g></g>
+<g transform="translate(100 225) rotate(60) scale(0.95)"><g class="leaf-sway" style="--d:0.70s"><use href="#leaf"/></g></g>
+<g transform="translate(160 210) rotate(-40) scale(0.7)"><g class="leaf-sway" style="--d:1.05s"><use href="#leaf"/></g></g>
+<g transform="translate(55 262) rotate(170) scale(0.9)"><g class="leaf-sway" style="--d:1.40s"><use href="#leaf"/></g></g>
+<g transform="translate(35 305) rotate(150) scale(0.8)"><g class="leaf-sway" style="--d:1.75s"><use href="#leaf"/></g></g>
+<g transform="translate(105 320) rotate(100) scale(1)"><g class="leaf-sway" style="--d:2.10s"><use href="#leaf"/></g></g>
+<g transform="translate(190 300) rotate(-20) scale(1)"><g class="leaf-sway" style="--d:0.00s"><use href="#leaf"/></g></g>
+<g transform="translate(225 285) rotate(-30) scale(0.8)"><g class="leaf-sway" style="--d:0.35s"><use href="#leaf"/></g></g>
+<g transform="translate(165 325) rotate(-25) scale(0.9)"><g class="leaf-sway" style="--d:0.70s"><use href="#leaf"/></g></g>
+<g transform="translate(25 425) rotate(-175) scale(0.9)"><g class="leaf-sway" style="--d:1.05s"><use href="#leaf"/></g></g>
+<g transform="translate(110 430) rotate(10) scale(1)"><g class="leaf-sway" style="--d:1.40s"><use href="#leaf"/></g></g>
+<g transform="translate(118 460) rotate(40) scale(0.9)"><g class="leaf-sway" style="--d:1.75s"><use href="#leaf"/></g></g>
+<g transform="translate(30 470) rotate(-120) scale(0.8)"><g class="leaf-sway" style="--d:2.10s"><use href="#leaf"/></g></g>
+<g transform="translate(55 330) rotate(80) scale(0.7)"><g class="leaf-sway" style="--d:0.00s"><use href="#leaf"/></g></g>
+<g transform="translate(175 235) rotate(-60) scale(0.8)"><g class="leaf-sway" style="--d:0.35s"><use href="#leaf"/></g></g>
+<g transform="translate(200 375) rotate(10) scale(0.7)"><g class="leaf-sway" style="--d:0.70s"><use href="#leaf"/></g></g>
+</g>
+<g class="flowers"><g transform="translate(60 62) rotate(10) scale(0.75)"><g class="bloom" style="--d:0.6s"><g class="sway" style="--d:0.0s"><use href="#peony"/></g></g></g>
+<g transform="translate(125 40) rotate(0) scale(0.8)"><g class="bloom" style="--d:0.8s"><g class="sway" style="--d:0.5s"><use href="#bud"/></g></g></g>
+<g transform="translate(120 125) rotate(-8) scale(0.85)"><g class="bloom" style="--d:0.95s"><g class="sway" style="--d:1.0s"><use href="#peony"/></g></g></g>
+<g transform="translate(50 190) rotate(-70) scale(0.75)"><g class="bloom" style="--d:1.1s"><g class="sway" style="--d:1.5s"><use href="#bud"/></g></g></g>
+<g transform="translate(168 183) rotate(0) scale(0.9)"><g class="bloom" style="--d:1.25s"><g class="sway" style="--d:2.0s"><use href="#daisy"/></g></g></g>
+<g transform="translate(130 270) rotate(15) scale(1.05)"><g class="bloom" style="--d:1.4s"><g class="sway" style="--d:0.0s"><use href="#peony"/></g></g></g>
+<g transform="translate(150 395) rotate(0) scale(1.2)"><g class="bloom" style="--d:1.6s"><g class="sway" style="--d:0.5s"><use href="#sprig"/></g></g></g>
+<g transform="translate(185 352) rotate(-20) scale(0.5)"><g class="bloom" style="--d:1.7000000000000002s"><g class="sway" style="--d:1.0s"><use href="#peony"/></g></g></g>
+<g transform="translate(60 388) rotate(-5) scale(1.15)"><g class="bloom" style="--d:1.5499999999999998s"><g class="sway" style="--d:1.5s"><use href="#peony"/></g></g></g>
+</g>
+<metadata><c2pa:manifest>AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYTpmNTZlMTdkYS0zM2RkLTQzMTYtOTE3Yy0wNWU4NThlZDliZTQAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaAjRZzAUJhqoWeShA1G+lLMAAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDo0ZDNmMDVhMy1iZjA5LTRlZDItODUzOS1iYjNhOGIwMGE0N2NscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNooaN1lfHH4mAmePB5y+fOtgAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFgg/z+HyQhnCiBmXirSs9BYvDC1SdnQV8gjxQX90qlseTikZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaINUHVUnv93fkxXZKDqIrrgAAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRMAAAAAAAAAAAAAAAAZGhhc2hYINoSaKvTWFxevK8V9cMlmRya+oJT2oTAgYpo/aSIOYDuZG5hbWVuanVtYmYgbWFuaWZlc3RqZXhjbHVzaW9uc4GiZXN0YXJ0GS77Zmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOmY1NmUxN2RhLTMzZGQtNDMxNi05MTdjLTA1ZTg1OGVkOWJlNC9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOmRhYzE3MTMzLWYyNWMtNGE2Mi05NWM2LTZiZmFiZjIwM2NjMnJjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCD/P4fJCGcKIGZeKtKz0Fi8MLVJ2dBXyCPFBf3SqWx5OKJjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFgg+eOUeUElkuFeauFdPi73ezG2+FGK/ukGKP7JylriRW+iY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFgg9QTCF0yvSXyCeKWr+lj9bP0PyoaBHv3+Dk8TMAFxHgp0Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQHimn38svBhFXBsXR3w6YFBkfHf9yOyHgUmzZ7suEern21+naIFGmvjnVTKXczE4uf75IvrgYn0jTXBeZc10VDI=</c2pa:manifest></metadata></svg>
