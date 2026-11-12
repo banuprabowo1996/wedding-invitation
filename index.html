@@ -56,6 +56,34 @@
   </head>
 
   <body>
+    <!-- Container Ornamen Animasi -->
+    <div class="ornament-container" aria-hidden="true">
+      
+      <!-- 1. Ornamen Ranting Daun & Bunga Sudut Kiri Bawah -->
+      <svg class="floral-corner bottom-left" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Ranting Utama -->
+        <path d="M10 190 Q 60 130 140 90" stroke="#7A947E" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- Daun-daun Sage Green -->
+        <path class="leaf-sway" d="M45 152 C 30 130, 45 110, 65 125 C 60 145, 50 150, 45 152 Z" fill="#9BB39E"/>
+        <path class="leaf-sway-alt" d="M75 130 C 90 145, 110 135, 95 115 C 80 115, 76 125, 75 130 Z" fill="#7A947E"/>
+        <path class="leaf-sway" d="M100 112 C 85 90, 100 70, 120 85 C 115 105, 105 110, 100 112 Z" fill="#B5C9B8"/>
+        <!-- Bunga Mawar Abstrak Dusty Pink -->
+        <g class="flower-bloom" transform="translate(135, 85)">
+          <circle cx="0" cy="0" r="16" fill="#E8B4BC"/>
+          <circle cx="-4" cy="-3" r="11" fill="#D9949F"/>
+          <circle cx="3" cy="2" r="7" fill="#C47482"/>
+          <circle cx="0" cy="0" r="3" fill="#C9A96E"/>
+        </g>
+        <!-- Kuncup Kecil -->
+        <circle cx="65" cy="165" r="5" fill="#E8B4BC"/>
+        <circle cx="155" cy="115" r="4" fill="#C9A96E"/>
+      </svg>
+
+      <!-- 2. Kupu-Kupu Emas & Dusty Pink (Bisa diperbanyak otomatis oleh JS) -->
+      <div id="butterfly-layer"></div>
+
+    </div>
+
     <nav class="navbar navbar-expand-md bg-body-tertiary fixed-top">
       <div class="container">
         <a class="navbar-brand" href="#">Nikahanmu</a>
@@ -102,9 +130,9 @@
       <div class="decor">
         <div class="circle-decoration-2"></div>
         <div class="circle-decoration"></div>
-        <img class="bunga1" src="assets/img/bunga1-Photoroom 1.png" alt="" />
-        <img class="bunga2" src="assets/img/bunga2-Photoroom 1.png" alt="" />
-        <img class="device" src="assets/img/Group 1.png" alt="" />
+        <img class="bunga1" src="assets/img/bunga1.svg" alt="bunga1" />
+        <img class="bunga2" src="assets/img/bunga2.svg" alt="bunga2" />
+        <img class="device" src="assets/img/Group 1.png" alt="group1" />
         <div class="socmed">
           <img
             src="assets/img/ig1.png"
@@ -171,7 +199,7 @@
             class="item-template"
             src="assets/img/Group 3.png"
             alt="template-2"
-            onclick="viewTemplate('2.0')"
+            onclick="viewTemplate('banu')"
           />
           <img
             class="item-template"
@@ -222,7 +250,7 @@
         <div class="card-container">
           <div class="option" onclick="sendToWhatsapp('Paket Murah 1')">
             <h4>Paket Murah 1</h4>
-            <p class="d-flex align-items-center">Rp<span>150.000</span></p>
+            <p class="d-flex align-items-center">Rp<span>49.000</span></p>
             <p class="bg-blue">PILIH SEKARANG</p>
             <div class="card-content">
               <div class="content">
@@ -235,7 +263,7 @@
               </div>
               <div class="content">
                 <img src="assets/img/Icon.png" alt="Icon" />
-                <p>300 Tamu Undangan</p>
+                <p>100 Tamu Undangan</p>
               </div>
             </div>
           </div>
@@ -247,7 +275,7 @@
             <p class="terpopuler">TERPOPULER</p>
 
             <h4>Paket<br />Spesial Custom</h4>
-            <p class="d-flex align-items-center">Rp<span>300.000</span></p>
+            <p class="d-flex align-items-center">Rp<span>199.000</span></p>
             <p class="bg-blue">PILIH SEKARANG</p>
             <div class="card-content">
               <div class="content">
@@ -267,7 +295,7 @@
 
           <div class="option" onclick="sendToWhatsapp('Paket Murah 2')">
             <h4>Paket Murah 2</h4>
-            <p class="d-flex align-items-center">Rp<span>200.000</span></p>
+            <p class="d-flex align-items-center">Rp<span>99.000</span></p>
             <p class="bg-blue">PILIH SEKARANG</p>
             <div class="card-content">
               <div class="content">
@@ -293,7 +321,7 @@
         <div class="row">
           <div class="col text-center">
             <small class="block"
-              >&copy; 2024 Nikahanmu. All Rights Reserved.</small
+              >&copy; 2026 Nikahanmu. All Rights Reserved.</small
             >
             <!-- <small class="block">Design by <a href="https://instagram.com/banuprabowoo"
                 target="_blank">@banuprabowoo</a>.</small> -->
@@ -339,7 +367,7 @@
 
     <script>
       function sendToWhatsapp(option) {
-        const phoneNumber = "628976982259"; // Use 62 for Indonesia's country code
+        const phoneNumber = "6285117315091"; // Use 62 for Indonesia's country code
         const message = `Hallo, saya ingin pesan undangan online ${
           option ? option : ""
         }!`;
@@ -360,16 +388,85 @@
 
       //template
       function viewTemplate(params) {
-        let url = `template-${params}/?to=Tamu Nikahan`;
+        let url = `template-${params}/?to=Tamu Nikahanmu`;
         if (params.includes("bagas")) {
-          url = `annisa-bagas/?to=Tamu Nikahan`;
+          url = `annisa-bagas/?to=Tamu Nikahanmu`;
         } else if (params.includes("copy")) {
-          url = `annisa-bagas-copy/?to=Tamu Nikahan`;
-        } else if (params.includes("banu-rini")) {
-          url = `banu-rini/?to=Tamu Nikahan`;
+          url = `annisa-bagas-copy/?to=Tamu Nikahanmu`;
+        } else if (params.includes("banu")) {
+          url = `banu-rini/?to=Tamu Nikahanmu`;
         }
         window.open(url, "_blank");
       }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const layer = document.getElementById("butterfly-layer");
+        if (!layer) return;
+
+        // Warna kupu-kupu disesuaikan dengan tema website Nikahanmu (Gold, Dusty Pink, Sage)
+        const colors = ["#C9A96E", "#D9949F", "#8DA690"];
+        const butterflyCount = 3; // Jumlah kupu-kupu
+
+        // Template SVG Kupu-kupu
+        function createButterflySVG(color) {
+          return `
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Sayap Kiri -->
+              <g class="wing-left">
+                <path d="M20 20 C 8 6, 2 14, 10 22 C 4 28, 12 34, 20 24 Z" fill="${color}" fill-opacity="0.85"/>
+              </g>
+              <!-- Sayap Kanan -->
+              <g class="wing-right">
+                <path d="M20 20 C 32 6, 38 14, 30 22 C 36 28, 28 34, 20 24 Z" fill="${color}" fill-opacity="0.85"/>
+              </g>
+              <!-- Badan Kupu-kupu -->
+              <line x1="20" y1="14" x2="20" y2="27" stroke="#4A4A4A" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          `;
+        }
+
+        // Inisialisasi setiap kupu-kupu dengan jalur terbang organik (gelombang sinus)
+        const butterflies = [];
+        for (let i = 0; i < butterflyCount; i++) {
+          const el = document.createElement("div");
+          el.classList.add("butterfly");
+          el.innerHTML = createButterflySVG(colors[i % colors.length]);
+          layer.appendChild(el);
+
+          butterflies.push({
+            el: el,
+            x: Math.random() * window.innerWidth,
+            y: Math.random() * (window.innerHeight * 0.7),
+            speedX: 0.4 + Math.random() * 0.5,
+            angle: Math.random() * Math.PI * 2,
+            amplitude: 0.6 + Math.random() * 0.8,
+            scale: 0.75 + Math.random() * 0.45
+          });
+        }
+
+        // Loop Animasi 60fps
+        function animateButterflies() {
+          butterflies.forEach((b) => {
+            b.x += b.speedX;
+            b.angle += 0.03;
+            b.y += Math.sin(b.angle) * b.amplitude;
+
+            // Jika melewati batas kanan layar, muncul kembali dari kiri
+            if (b.x > window.innerWidth + 40) {
+              b.x = -40;
+              b.y = Math.random() * (window.innerHeight * 0.7);
+            }
+
+            // Menghitung kemiringan arah terbang agar terlihat alami
+            const tilt = Math.sin(b.angle) * 15 + 15;
+            b.el.style.transform = `translate3d(${b.x}px, ${b.y}px, 0) rotate(${tilt}deg) scale(${b.scale})`;
+          });
+
+          requestAnimationFrame(animateButterflies);
+        }
+
+        animateButterflies();
+      });
     </script>
   </body>
 </html>

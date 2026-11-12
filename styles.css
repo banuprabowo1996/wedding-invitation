@@ -568,3 +568,93 @@ footer li {
     transform: translateY(-25%);
   }
 }
+
+/* ============================================== */
+/* Container Utama Ornamen */
+.ornament-container {
+  position: fixed; /* Mengikuti layar saat di-scroll, ubah ke 'absolute' jika hanya ingin di bagian atas */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Sangat penting agar tombol website tetap bisa diklik */
+  overflow: hidden;
+  z-index: 5;
+}
+
+/* Posisi Ornamen Bunga Sudut */
+.floral-corner.bottom-left {
+  position: absolute;
+  bottom: -10px;
+  left: -10px;
+  width: 240px;
+  height: 240px;
+  transform-origin: bottom left;
+  animation: gentleWind 6s ease-in-out infinite alternate;
+}
+
+/* Animasi Daun & Bunga Tertiup Angin */
+@keyframes gentleWind {
+  0% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(2.5deg) scale(1.02); }
+  100% { transform: rotate(-1.5deg) scale(1); }
+}
+
+.leaf-sway {
+  transform-origin: center;
+  animation: leafMove 4s ease-in-out infinite alternate;
+}
+
+.leaf-sway-alt {
+  transform-origin: center;
+  animation: leafMove 5s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes leafMove {
+  from { transform: rotate(-3deg); }
+  to { transform: rotate(4deg); }
+}
+
+/* Styling & Animasi Kupu-kupu */
+.butterfly {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  will-change: transform;
+  transition: transform 0.2s linear;
+}
+
+.butterfly svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+/* Kepakan Sayap Kiri dan Kanan */
+.wing-left {
+  transform-origin: 50% 50%;
+  animation: flapLeft 0.28s ease-in-out infinite alternate;
+}
+
+.wing-right {
+  transform-origin: 50% 50%;
+  animation: flapRight 0.28s ease-in-out infinite alternate;
+}
+
+@keyframes flapLeft {
+  0% { transform: scaleX(1) rotate(0deg); }
+  100% { transform: scaleX(0.35) rotate(-10deg); }
+}
+
+@keyframes flapRight {
+  0% { transform: scaleX(1) rotate(0deg); }
+  100% { transform: scaleX(0.35) rotate(10deg); }
+}
+
+/* Responsif untuk layar HP */
+@media (max-width: 768px) {
+  .floral-corner.bottom-left {
+    width: 160px;
+    height: 160px;
+  }
+}
